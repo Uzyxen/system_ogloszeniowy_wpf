@@ -12,28 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using system_ogloszeniowy_wpf.Pages;
 
-namespace system_ogloszeniowy_wpf
+namespace system_ogloszeniowy_wpf.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logika interakcji dla klasy MyAccount.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MyAccount : Page
     {
-        public static bool logged = true;
-        public MainWindow()
+        public MyAccount()
         {
             InitializeComponent();
-
-            if(logged == false)
-            {
-                Main.Navigate(new Login());
-            }
-            else
-            {
-                Main.Navigate(new Home());
-            }
         }
     }
 }

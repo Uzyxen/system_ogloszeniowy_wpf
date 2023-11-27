@@ -23,6 +23,17 @@ namespace system_ogloszeniowy_wpf.Pages
         public Home()
         {
             InitializeComponent();
+
+            if(MainWindow.logged == true)
+            {
+                loginButton.Visibility = Visibility.Hidden;
+                myAccountButton.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                loginButton.Visibility = Visibility.Visible;
+                myAccountButton.Visibility = Visibility.Hidden;
+            }
         }
 
         private void SearchForOffers(object sender, RoutedEventArgs e)
@@ -31,6 +42,20 @@ namespace system_ogloszeniowy_wpf.Pages
             {
                 MessageBox.Show("Uzupełnij pola!", "Błąd", MessageBoxButton.OK, MessageBoxImage.Information);
             }
+        }
+
+        private void GoToMyAccount(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (system_ogloszeniowy_wpf.MainWindow)App.Current.MainWindow;
+
+            mainWindow.Main.Navigate(new MyAccount());
+        }
+
+        private void GoToLoginPage(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (system_ogloszeniowy_wpf.MainWindow)App.Current.MainWindow;
+
+            mainWindow.Main.Navigate(new Login());
         }
     }
 }
