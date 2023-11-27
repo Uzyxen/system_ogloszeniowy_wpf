@@ -39,9 +39,30 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1">
-            <StackPanel Orientation="Horizontal">
-                <Label Content="92 875" Foreground="#6244DB" FontSize="35" FontWeight="Bold" VerticalContentAlignment="Center"/>
-                <Label Content="sprawdzonych ofert pracy" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="25" Foreground="#A3A3A3"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+            </Grid>
+            
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0">
+                <Label Content="92 875" Foreground="#6244DB" FontSize="40" FontWeight="Bold" VerticalContentAlignment="Center"/>
+                <StackPanel>
+                    <Label Content="sprawdzonych ofert pracy" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="30" Foreground="#393939" Padding="0, 30, 0, 0"/>
+                    <Label Content="od najlepszych pracodawców" FontSize="15" Foreground="#A3A3A3" HorizontalContentAlignment="Right"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="0, 40, 0, 0">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="SearchInput" Width="350" Height="40" VerticalContentAlignment="Center"/>
+                    <TextBox Width="200" VerticalContentAlignment="Center"/>
+                    <TextBox Width="200" VerticalContentAlignment="Center"/>
+                    <TextBox Width="80" VerticalContentAlignment="Center"/>
+                </StackPanel>
+
+                <Button Click="SearchForOffers" Content="Szukaj" Background="#6244DB" HorizontalAlignment="Right" Width="120" Height="40" Margin="0, 20, 0, 0" Foreground="White" FontSize="18" Cursor="Hand" BorderThickness="0"/>
             </StackPanel>
             
         </StackPanel>

@@ -24,5 +24,13 @@ namespace system_ogloszeniowy_wpf.Pages
         {
             InitializeComponent();
         }
+
+        private void SearchForOffers(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(SearchInput.Text))
+            {
+                MessageBox.Show("Uzupełnij pola!", "Błąd", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
     }
 }
