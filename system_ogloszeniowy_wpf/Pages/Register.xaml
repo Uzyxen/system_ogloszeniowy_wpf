@@ -1,0 +1,54 @@
+﻿<Page x:Class="system_ogloszeniowy_wpf.Pages.Register"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:system_ogloszeniowy_wpf.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="675" d:DesignWidth="1200"
+      Title="Register" Background="White">
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="MOLTARO" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#6244DB"/>
+
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Login" FontSize="18"/>
+            <TextBox Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <TextBlock Text="Email" FontSize="18"/>
+            <TextBox Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3">
+            <TextBlock Text="Hasło" FontSize="18"/>
+            <TextBox Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4">
+            <TextBlock Text="Potwórz Hasło" FontSize="18"/>
+            <TextBox Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Masz już konto?"/>
+                <Button Content="Zaloguj się" Background="Transparent" Foreground="#09B8D7" BorderThickness="0" Click="GoToLoginPage"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Button Grid.Row="5" Content="Zarejestruj się" FontSize="18" Height="40" Background="#6244DB" BorderThickness="0" Foreground="White"/>
+
+    </Grid>
+</Page>
