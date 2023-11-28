@@ -31,5 +31,37 @@ namespace system_ogloszeniowy_wpf.Pages
 
             mainWindow.Main.Navigate(new Login());
         }
+
+        private void RegisterButtonClicked(object sender, RoutedEventArgs e)
+        {
+            bool success = true;
+
+            if(string.IsNullOrEmpty(loginTxt.Text) || string.IsNullOrEmpty(emailTxt.Text) ||  string.IsNullOrEmpty(passwordTxt.Password) || string.IsNullOrEmpty(password2Txt.Password))
+            {
+                MessageBox.Show("Uzupełnij wszystkie pola!", "Błąd", MessageBoxButton.OK, MessageBoxImage.Information);
+                success = false;
+            }
+            else
+            {
+                if (!(loginTxt.Text.All(char.IsLetterOrDigit)) || loginTxt.Text.Length < 3 || loginTxt.Text.Length > 20)
+                {
+                    MessageBox.Show("Login musi mieć od 3 do 20 znaków i może zawierać tylko litery i liczby", "Niepoprawny login!", MessageBoxButton.OK, MessageBoxImage.Information);
+                    success = false;
+                }
+                if (!passwordTxt.Password.ToString().All(char.IsLetterOrDigit) || passwordTxt.Password.ToString().Length < 8)
+                {
+                    MessageBox.Show("Hasło musi mieć więcej niż 8 znaków i może zawierać tylko litery i liczby", "Niepoprawne hasło!", MessageBoxButton.OK, MessageBoxImage.Information);
+                    success = false;
+                }
+                if (!password2Txt.Password.ToString().All(char.IsLetterOrDigit) || password2Txt.Password.ToString() != password2Txt.Password.ToString())
+                {
+                    MessageBox.Show("Hasło może zawierać tylko litery i liczby", "Hasła się nie zgadzają!", MessageBoxButton.OK, MessageBoxImage.Information);
+                    success = false;
+                }
+            }
+
+            var login = loginTxt.Text;
+            var users = 
+        }
     }
 }

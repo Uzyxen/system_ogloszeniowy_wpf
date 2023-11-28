@@ -13,5 +13,9 @@ namespace system_ogloszeniowy_wpf
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            Database.Database.InitializeDatabase();
+        }
     }
 }

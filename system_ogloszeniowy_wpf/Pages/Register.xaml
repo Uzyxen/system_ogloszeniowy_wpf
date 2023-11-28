@@ -26,29 +26,29 @@
 
         <StackPanel Grid.Row="1">
             <TextBlock Text="Login" FontSize="18"/>
-            <TextBox Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
+            <TextBox x:Name="loginTxt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2">
             <TextBlock Text="Email" FontSize="18"/>
-            <TextBox Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
+            <TextBox x:Name="emailTxt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
         </StackPanel>
 
         <StackPanel Grid.Row="3">
             <TextBlock Text="Hasło" FontSize="18"/>
-            <TextBox Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
+            <PasswordBox x:Name="passwordTxt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
         </StackPanel>
 
         <StackPanel Grid.Row="4">
             <TextBlock Text="Potwórz Hasło" FontSize="18"/>
-            <TextBox Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
+            <PasswordBox x:Name="password2Txt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Masz już konto?"/>
                 <Button Content="Zaloguj się" Background="Transparent" Foreground="#09B8D7" BorderThickness="0" Click="GoToLoginPage"/>
             </StackPanel>
         </StackPanel>
 
-        <Button Grid.Row="5" Content="Zarejestruj się" FontSize="18" Height="40" Background="#6244DB" BorderThickness="0" Foreground="White"/>
+        <Button Click="RegisterButtonClicked" Grid.Row="5" Content="Zarejestruj się" FontSize="18" Height="40" Background="#6244DB" BorderThickness="0" Foreground="White"/>
 
     </Grid>
 </Page>
