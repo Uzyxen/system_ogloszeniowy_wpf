@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using system_ogloszeniowy_wpf.Models;
 
 namespace system_ogloszeniowy_wpf.Pages
 {
@@ -27,7 +28,7 @@ namespace system_ogloszeniowy_wpf.Pages
 
         private void GoToLoginPage(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = (system_ogloszeniowy_wpf.MainWindow)App.Current.MainWindow;
+            MainWindow mainWindow = (MainWindow)App.Current.MainWindow;
 
             mainWindow.Main.Navigate(new Login());
         }
@@ -61,7 +62,35 @@ namespace system_ogloszeniowy_wpf.Pages
             }
 
             var login = loginTxt.Text;
-            var users = 
+            var users = Database.Methods.DatabaseUser.ReadUsers();
+
+            foreach(var user in users)
+            {
+                if(user.Login == login)
+                {
+                    success = false;
+                    MessageBox.Show("Użytkownik z takim loginem już istnieje", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Information);
+                    break;
+                }
+            }
+
+            if (success)
+            {
+                var user = new User();
+
+                user.Imie = "";
+                user.Nazwisko = "";
+                user.Opis = "";
+                user.Login = login;
+                user.Haslo = passwordTxt.Password.ToString();
+                user.Email = emailTxt.Text;
+                user.Numer_telefonu = "";
+
+                Database.Methods.DatabaseUser.AddUser(user);
+
+                var mainWindow = (MainWindow)Application.Current.MainWindow;
+                mainWindow.Main.Navigate(new Login());
+            }
         }
     }
 }

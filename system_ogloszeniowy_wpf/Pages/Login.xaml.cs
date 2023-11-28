@@ -27,7 +27,7 @@ namespace system_ogloszeniowy_wpf.Pages
 
         private void GoToRegisterPage(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = (system_ogloszeniowy_wpf.MainWindow)App.Current.MainWindow;
+            MainWindow mainWindow = (MainWindow)App.Current.MainWindow;
 
             mainWindow.Main.Navigate(new Register());
         }
