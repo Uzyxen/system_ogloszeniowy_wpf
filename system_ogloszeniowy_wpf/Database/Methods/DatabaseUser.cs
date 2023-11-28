@@ -20,7 +20,7 @@ namespace system_ogloszeniowy_wpf.Database.Methods
             {
                 db.Open();
 
-                var selectCommand = new SqliteCommand("SELECT * FROM users", db);
+                var selectCommand = new SqliteCommand("SELECT * FROM uzytkownicy", db);
                 var query = selectCommand.ExecuteReader();
 
                 while (query.Read())

@@ -37,7 +37,7 @@ namespace system_ogloszeniowy_wpf.Pages
         {
             bool success = true;
 
-            if(string.IsNullOrEmpty(loginTxt.Text) || string.IsNullOrEmpty(emailTxt.Text) ||  string.IsNullOrEmpty(passwordTxt.Password) || string.IsNullOrEmpty(password2Txt.Password))
+            if(string.IsNullOrEmpty(loginTxt.Text) || string.IsNullOrEmpty(emailTxt.Text) ||  string.IsNullOrEmpty(passwordTxt.Password.ToString()) || string.IsNullOrEmpty(password2Txt.Password.ToString()))
             {
                 MessageBox.Show("Uzupełnij wszystkie pola!", "Błąd", MessageBoxButton.OK, MessageBoxImage.Information);
                 success = false;

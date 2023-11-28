@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using system_ogloszeniowy_wpf.Models;
 
 namespace system_ogloszeniowy_wpf
 {
@@ -13,6 +14,7 @@ namespace system_ogloszeniowy_wpf
     /// </summary>
     public partial class App : Application
     {
+        public static User loggedUser = null;
         public App()
         {
             Database.Database.InitializeDatabase();

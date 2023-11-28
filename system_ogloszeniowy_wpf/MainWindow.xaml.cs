@@ -21,19 +21,11 @@ namespace system_ogloszeniowy_wpf
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static bool logged = true;
         public MainWindow()
         {
             InitializeComponent();
 
-            if(logged == false)
-            {
-                Main.Navigate(new Login());
-            }
-            else
-            {
-                Main.Navigate(new Home());
-            }
+            Main.Navigate(new Home());
         }
     }
 }
