@@ -6,9 +6,50 @@
       xmlns:local="clr-namespace:system_ogloszeniowy_wpf.Pages.AdminPages"
       mc:Ignorable="d" 
       d:DesignHeight="675" d:DesignWidth="1200"
-      Title="AddOfferPage" Background="White">
+      Title="AddOfferPage" Background="White" Cursor="Hand">
 
-    <Grid>
-        
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="110"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Dodaj oferte" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Tytul" FontSize="18"/>
+            <TextBox x:Name="tytulTxt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <TextBlock Text="Opis" FontSize="18"/>
+            <TextBox x:Name="opisTxt" Height="70" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Margin="0, 10, 0, 0">
+            <TextBlock Text="Kategoria" FontSize="18"/>
+            <TextBox x:Name="kategoriaTxt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4">
+            <TextBlock Text="Lokalizacja" FontSize="18"/>
+            <TextBox x:Name="lokalizacjaTxt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="5">
+            <TextBlock Text="Odległość" FontSize="18"/>
+            <TextBox x:Name="odlegloscTxt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
+        </StackPanel>
+
+        <Button Click="CreateOfferButtonClicked" Grid.Row="6" Content="Utwórz oferte" FontSize="18" Height="40" Background="#6244DB" BorderThickness="0" Foreground="White"/>
     </Grid>
 </Page>

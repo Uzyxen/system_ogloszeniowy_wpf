@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using system_ogloszeniowy_wpf.Models;
 
 namespace system_ogloszeniowy_wpf.Pages
 {
@@ -24,7 +25,7 @@ namespace system_ogloszeniowy_wpf.Pages
         {
             InitializeComponent();
 
-            offers_list.ItemsSource = Database.Methods.DatabaseOffer.ReadOffers();
+            offersData.ItemsSource = Database.Methods.DatabaseOffer.ReadOffers();
         }
     }
 }

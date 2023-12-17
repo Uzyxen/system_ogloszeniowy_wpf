@@ -13,7 +13,7 @@ namespace system_ogloszeniowy_wpf.Database.Methods
     {
         public static List<Offer> ReadOffers()
         {
-            var users = new List<Offer>();
+            var offers = new List<Offer>();
             string dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "serwis_ogloszeniowy.db");
 
             using (var db = new SqliteConnection($"Filename={dbpath}"))
@@ -33,11 +33,30 @@ namespace system_ogloszeniowy_wpf.Database.Methods
                     offer.Lokalizacja = query.GetString(4);
                     offer.Odleglosc = query.GetInt32(5);
 
-                    users.Add(offer);
+                    offers.Add(offer);
                 }
             }
 
-            return users;
+            return offers;
+        }
+
+        public static void AddOffer(Offer offer)
+        {
+            string dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "serwis_ogloszeniowy.db");
+
+            using (var db = new SqliteConnection($"Filename={dbpath}"))
+            {
+                db.Open();
+
+                var insertCommand = new SqliteCommand("INSERT INTO oferty (oferta_id, tytul, opis, kategoria, lokalizacja, odleglosc) VALUES (NULL, @Tytul, @Opis, @Kategoria, @Lokalizacja, @Odleglosc)", db);
+                insertCommand.Parameters.AddWithValue("@Tytul", offer.Tytul);
+                insertCommand.Parameters.AddWithValue("@Opis", offer.Opis);
+                insertCommand.Parameters.AddWithValue("@Kategoria", offer.Kategoria);
+                insertCommand.Parameters.AddWithValue("@Lokalizacja", offer.Lokalizacja);
+                insertCommand.Parameters.AddWithValue("@Odleglosc", offer.Odleglosc);
+
+                insertCommand.ExecuteReader();
+            }
         }
     }
 }

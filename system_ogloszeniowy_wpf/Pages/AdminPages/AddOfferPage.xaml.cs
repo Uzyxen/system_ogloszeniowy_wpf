@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using system_ogloszeniowy_wpf.Models;
 
 namespace system_ogloszeniowy_wpf.Pages.AdminPages
 {
@@ -23,6 +24,22 @@ namespace system_ogloszeniowy_wpf.Pages.AdminPages
         public AddOfferPage()
         {
             InitializeComponent();
+        }
+
+        private void CreateOfferButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var offer = new Offer();
+
+            offer.Tytul = tytulTxt.Text;
+            offer.Opis = opisTxt.Text;
+            offer.Kategoria = kategoriaTxt.Text;
+            offer.Lokalizacja = lokalizacjaTxt.Text;
+            offer.Odleglosc = int.Parse(odlegloscTxt.Text);
+
+            Database.Methods.DatabaseOffer.AddOffer(offer);
+
+            var mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.Main.Navigate(new Offers());
         }
     }
 }

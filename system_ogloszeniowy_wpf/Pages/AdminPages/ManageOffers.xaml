@@ -13,7 +13,7 @@
 
         <StackPanel Orientation="Horizontal">
             <Button Content="Dodaj oferte" Click="GoToAddOfferPage"/>
-            <Button Content="Przeglądaj oferty w trybie admina" Click="GoToOffersPage"/>
+            <Button Content="Przeglądaj oferty w trybie admina" Click="GoToOffersPage" Cursor="Hand"/>
         </StackPanel>
     </StackPanel>
 </Page>

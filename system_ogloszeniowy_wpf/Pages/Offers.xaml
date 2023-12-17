@@ -11,12 +11,20 @@
     <StackPanel>
         <Label Content="Oferty" FontSize="40" FontWeight="Bold" HorizontalContentAlignment="Center"/>
 
-        <ListView x:Name="offers_list">
-            <ListViewItem>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="{Binding Tytul}"/>
-                </StackPanel>
-            </ListViewItem>
+        <ListView x:Name="offersData" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="520">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Width="1000">
+                        <StackPanel Width="700">
+                            <TextBlock Text="{Binding Tytul}" VerticalAlignment="Top" FontSize="22" Margin="0, 0, 0, 0"/>
+                            <TextBlock Text="{Binding Opis}" Margin="0, 0, 0, 3"/>
+                            <TextBlock Text="{Binding Kategoria}" Margin="0, 0, 0, 3"/>
+                            <TextBlock Text="{Binding Lokalizacja}" Margin="0, 0, 0, 3"/>
+                            <TextBlock Text="{Binding Odleglosc}" Margin="0, 0, 0, 3"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
     </StackPanel>
 </Page>
