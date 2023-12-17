@@ -18,7 +18,7 @@ namespace system_ogloszeniowy_wpf.Database
             {
                 db.Open();
 
-                string usersTableCommand = "CREATE TABLE IF NOT EXISTS uzytkownicy (user_id INTEGER PRIMARY KEY AUTOINCREMENT, imie NVARCHAR(50), nazwisko NVARCHAR(50), opis NVARCHAR(2000), login NVARCHAR(20), haslo NVARCHAR(20), email NVARCHAR(255), numer_telefonu NVARCHAR(16))";
+                string usersTableCommand = "CREATE TABLE IF NOT EXISTS uzytkownicy (user_id INTEGER PRIMARY KEY AUTOINCREMENT, imie NVARCHAR(50), nazwisko NVARCHAR(50), opis NVARCHAR(2000), stanowisko NVARCHAR(30), login NVARCHAR(20), haslo NVARCHAR(20), email NVARCHAR(255), numer_telefonu NVARCHAR(16))";
                 var createUsersTable = new SqliteCommand(usersTableCommand, db);
 
                 createUsersTable.ExecuteReader();

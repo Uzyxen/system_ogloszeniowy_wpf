@@ -8,7 +8,24 @@
       d:DesignHeight="675" d:DesignWidth="1200"
       Title="MyAccount" Background="White">
 
-    <Grid>
-        
+    <Grid Margin="30">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
+            <StackPanel>
+                <Border Background="Gray" CornerRadius="100" Width="180" Height="180">
+                    <Viewbox/>
+                </Border>
+                <Label Content="{Binding Stanowisko}" HorizontalAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="{Binding Imie}" FontSize="20"/>
+                <Label Content="{Binding Nazwisko}" FontSize="20"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

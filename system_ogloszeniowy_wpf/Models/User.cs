@@ -12,6 +12,7 @@ namespace system_ogloszeniowy_wpf.Models
         public string? Imie { get; set; }
         public string? Nazwisko { get; set; }
         public string? Opis { get; set; }
+        public string? Stanowisko { get; set; }
         public string? Login { get; set; }
         public string? Haslo { get; set; }
         public string? Email { get; set; }

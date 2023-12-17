@@ -54,7 +54,7 @@ namespace system_ogloszeniowy_wpf.Pages
                     MessageBox.Show("Hasło musi mieć więcej niż 8 znaków i może zawierać tylko litery i liczby", "Niepoprawne hasło!", MessageBoxButton.OK, MessageBoxImage.Information);
                     success = false;
                 }
-                if (!password2Txt.Password.ToString().All(char.IsLetterOrDigit) || password2Txt.Password.ToString() != password2Txt.Password.ToString())
+                if (!password2Txt.Password.ToString().All(char.IsLetterOrDigit) || passwordTxt.Password.ToString() != password2Txt.Password.ToString())
                 {
                     MessageBox.Show("Hasło może zawierać tylko litery i liczby", "Hasła się nie zgadzają!", MessageBoxButton.OK, MessageBoxImage.Information);
                     success = false;
@@ -81,6 +81,7 @@ namespace system_ogloszeniowy_wpf.Pages
                 user.Imie = "";
                 user.Nazwisko = "";
                 user.Opis = "";
+                user.Stanowisko = "";
                 user.Login = login;
                 user.Haslo = passwordTxt.Password.ToString();
                 user.Email = emailTxt.Text;
