@@ -26,6 +26,47 @@ namespace system_ogloszeniowy_wpf.Pages
             InitializeComponent();
 
             offersData.ItemsSource = Database.Methods.DatabaseOffer.ReadOffers();
+
+            if(App.loggedUser != null)
+            {
+                if(App.loggedUser.Admin == true)
+                {
+                    AdminManage.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    AdminManage.Visibility = Visibility.Hidden;
+                }
+            }
+        }
+
+        private void DeleteOfferButton(object sender, RoutedEventArgs e)
+        {
+            if (offersData.SelectedItem != null)
+            {
+                var offer = offersData.SelectedItem as Offer;
+
+                Database.Methods.DatabaseOffer.DeleteOffer(offer.Id);
+                offersData.ItemsSource = Database.Methods.DatabaseOffer.ReadOffers();
+
+                offersData.SelectedItem = null;
+            }
+            else
+            {
+                MessageBox.Show("Zaznacz element!", "Błąd!", MessageBoxButton.OK);
+            }
+        }
+
+        private void EditOfferButton(object sender, RoutedEventArgs e)
+        {
+            if (offersData.SelectedItem != null)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Zaznacz element!", "Błąd!", MessageBoxButton.OK);
+            }
         }
     }
 }

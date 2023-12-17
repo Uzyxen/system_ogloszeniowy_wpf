@@ -58,5 +58,20 @@ namespace system_ogloszeniowy_wpf.Database.Methods
                 insertCommand.ExecuteReader();
             }
         }
+
+        public static void DeleteOffer(int id)
+        {
+            string dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "serwis_ogloszeniowy.db");
+
+            using (var db = new SqliteConnection($"Filename={dbpath}"))
+            {
+                db.Open();
+
+                var insertCommand = new SqliteCommand("DELETE FROM oferty WHERE oferta_id=@Id", db);
+                insertCommand.Parameters.AddWithValue("@Id", id);
+
+                insertCommand.ExecuteNonQuery();
+            }
+        }
     }
 }

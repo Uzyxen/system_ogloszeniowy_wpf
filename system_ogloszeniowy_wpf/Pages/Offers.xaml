@@ -11,16 +11,26 @@
     <StackPanel>
         <Label Content="Oferty" FontSize="40" FontWeight="Bold" HorizontalContentAlignment="Center"/>
 
+        <StackPanel x:Name="AdminManage" Visibility="Hidden" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Click="EditOfferButton" Foreground="White" Background="#6244DB" BorderThickness="0" Content="Edytuj" Width="100" VerticalAlignment="Top"/>
+            <Button Click="DeleteOfferButton" Foreground="White" Background="#FF5252" BorderThickness="0" Content="Usuń" Width="100" VerticalAlignment="Top" Margin="5, 0, 0, 0"/>
+        </StackPanel>
+
         <ListView x:Name="offersData" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="520">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal" Width="1000">
-                        <StackPanel Width="700">
+                    <StackPanel Orientation="Horizontal" Width="1150">
+                        <StackPanel Width="950">
                             <TextBlock Text="{Binding Tytul}" VerticalAlignment="Top" FontSize="22" Margin="0, 0, 0, 0"/>
                             <TextBlock Text="{Binding Opis}" Margin="0, 0, 0, 3"/>
                             <TextBlock Text="{Binding Kategoria}" Margin="0, 0, 0, 3"/>
-                            <TextBlock Text="{Binding Lokalizacja}" Margin="0, 0, 0, 3"/>
-                            <TextBlock Text="{Binding Odleglosc}" Margin="0, 0, 0, 3"/>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Lokalizacja}" Margin="0, 0, 0, 3"/>
+                                <TextBlock Text=" +"/>
+                                <TextBlock Text="{Binding Odleglosc}" Margin="0, 0, 0, 3"/>
+                                <TextBlock Text=" km"/>
+                            </StackPanel>
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>

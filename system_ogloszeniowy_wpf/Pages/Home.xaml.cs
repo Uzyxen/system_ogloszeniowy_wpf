@@ -73,5 +73,12 @@ namespace system_ogloszeniowy_wpf.Pages
 
             mainWindow.Main.Navigate(new AdminPages.AdminPanel());
         }
+
+        private void GoToOffersPage(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (system_ogloszeniowy_wpf.MainWindow)App.Current.MainWindow;
+
+            mainWindow.Main.Navigate(new Offers());
+        }
     }
 }
