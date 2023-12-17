@@ -17,5 +17,6 @@ namespace system_ogloszeniowy_wpf.Models
         public string? Haslo { get; set; }
         public string? Email { get; set; }
         public string? Numer_telefonu { get; set; }
+        public bool Admin { get; set; }
     }
 }

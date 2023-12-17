@@ -13,18 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace system_ogloszeniowy_wpf.Pages
+namespace system_ogloszeniowy_wpf.Pages.AdminPages
 {
     /// <summary>
-    /// Logika interakcji dla klasy Offers.xaml
+    /// Logika interakcji dla klasy ManageUsers.xaml
     /// </summary>
-    public partial class Offers : Page
+    public partial class ManageUsers : Page
     {
-        public Offers()
+        public ManageUsers()
         {
             InitializeComponent();
-
-            offers_list.ItemsSource = Database.Methods.DatabaseOffer.ReadOffers();
         }
     }
 }

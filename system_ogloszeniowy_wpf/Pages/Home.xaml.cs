@@ -28,6 +28,15 @@ namespace system_ogloszeniowy_wpf.Pages
             {
                 loginButton.Visibility = Visibility.Hidden;
                 myAccountButton.Visibility = Visibility.Visible;
+
+                if(App.loggedUser.Admin == true)
+                {
+                    adminInfo.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    adminInfo.Visibility = Visibility.Hidden;
+                }
             }
             else
             {
@@ -56,6 +65,13 @@ namespace system_ogloszeniowy_wpf.Pages
             MainWindow mainWindow = (system_ogloszeniowy_wpf.MainWindow)App.Current.MainWindow;
 
             mainWindow.Main.Navigate(new Login());
+        }
+
+        private void GoToAdminPanel(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (system_ogloszeniowy_wpf.MainWindow)App.Current.MainWindow;
+
+            mainWindow.Main.Navigate(new AdminPages.AdminPanel());
         }
     }
 }

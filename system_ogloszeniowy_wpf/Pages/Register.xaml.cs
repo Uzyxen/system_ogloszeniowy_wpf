@@ -87,6 +87,15 @@ namespace system_ogloszeniowy_wpf.Pages
                 user.Email = emailTxt.Text;
                 user.Numer_telefonu = "";
 
+                if (adminCheckBox.IsChecked ?? false)
+                {
+                    user.Admin = true;
+                }
+                else
+                {
+                    user.Admin = false;
+                }
+
                 Database.Methods.DatabaseUser.AddUser(user);
 
                 var mainWindow = (MainWindow)Application.Current.MainWindow;

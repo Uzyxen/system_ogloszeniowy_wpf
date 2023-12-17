@@ -1,0 +1,17 @@
+﻿<Page x:Class="system_ogloszeniowy_wpf.Pages.AdminPages.AdminPanel"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:system_ogloszeniowy_wpf.Pages.AdminPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="675" d:DesignWidth="1200"
+      Title="AdminPanel" Background="White">
+
+    <StackPanel>
+        <Label Content="Panel admina" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center"/>
+
+        <Button Cursor="Hand" Content="Oferty" Click="GoToAdminOffers"/>
+        <Button Cursor="Hand" Content="Użytkownicy" Click="GoToAdminUsers"/>
+    </StackPanel>
+</Page>

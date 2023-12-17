@@ -35,6 +35,7 @@ namespace system_ogloszeniowy_wpf.Database.Methods
                     user.Haslo = query.GetString(6);
                     user.Email = query.GetString(7);
                     user.Numer_telefonu = query.GetString(8);
+                    user.Admin = query.GetBoolean(9);
 
                     users.Add(user);
                 }
@@ -50,7 +51,7 @@ namespace system_ogloszeniowy_wpf.Database.Methods
             {
                 db.Open();
 
-                var insertCommand = new SqliteCommand("INSERT INTO uzytkownicy (user_id, imie, nazwisko, opis, stanowisko, login, haslo, email, numer_telefonu) VALUES (NULL, @Imie, @Nazwisko, @Opis, @Stanowisko, @Login, @Haslo, @Email, @Numer_tel)", db);
+                var insertCommand = new SqliteCommand("INSERT INTO uzytkownicy (user_id, imie, nazwisko, opis, stanowisko, login, haslo, email, numer_telefonu, czy_admin) VALUES (NULL, @Imie, @Nazwisko, @Opis, @Stanowisko, @Login, @Haslo, @Email, @Numer_tel, @Admin)", db);
                 insertCommand.Parameters.AddWithValue("@Imie", user.Imie);
                 insertCommand.Parameters.AddWithValue("@Nazwisko", user.Nazwisko);
                 insertCommand.Parameters.AddWithValue("@Opis", user.Opis);
@@ -59,6 +60,7 @@ namespace system_ogloszeniowy_wpf.Database.Methods
                 insertCommand.Parameters.AddWithValue("@Haslo", user.Haslo);
                 insertCommand.Parameters.AddWithValue("@Email", user.Email);
                 insertCommand.Parameters.AddWithValue("@Numer_tel", user.Numer_telefonu);
+                insertCommand.Parameters.AddWithValue("@Admin", user.Admin);
 
                 insertCommand.ExecuteReader();
             }

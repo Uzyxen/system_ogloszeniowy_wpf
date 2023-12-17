@@ -8,7 +8,15 @@
       d:DesignHeight="675" d:DesignWidth="1200"
       Title="Offers" Background="White">
 
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <Label Content="Oferty" FontSize="40" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+
+        <ListView x:Name="offers_list">
+            <ListViewItem>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="{Binding Tytul}"/>
+                </StackPanel>
+            </ListViewItem>
+        </ListView>
+    </StackPanel>
 </Page>

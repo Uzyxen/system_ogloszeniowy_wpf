@@ -42,13 +42,15 @@
         <StackPanel Grid.Row="4">
             <TextBlock Text="Potwórz Hasło" FontSize="18"/>
             <PasswordBox x:Name="password2Txt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
+            
             <StackPanel Orientation="Horizontal">
                 <Label Content="Masz już konto?"/>
                 <Button Content="Zaloguj się" Background="Transparent" Foreground="#09B8D7" BorderThickness="0" Click="GoToLoginPage"/>
             </StackPanel>
         </StackPanel>
 
-        <Button Click="RegisterButtonClicked" Grid.Row="5" Content="Zarejestruj się" FontSize="18" Height="40" Background="#6244DB" BorderThickness="0" Foreground="White"/>
+        <CheckBox x:Name="adminCheckBox" Content="Admin?" Grid.Row="5"/>
 
+        <Button Click="RegisterButtonClicked" Grid.Row="6" Content="Zarejestruj się" FontSize="18" Height="40" Background="#6244DB" BorderThickness="0" Foreground="White"/>
     </Grid>
 </Page>

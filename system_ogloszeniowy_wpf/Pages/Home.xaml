@@ -11,7 +11,8 @@
     <StackPanel>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="70"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="30"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
@@ -43,7 +44,9 @@
                 </Grid>
             </StackPanel>
 
-            <StackPanel Grid.Row="1">
+            <Button x:Name="adminInfo" Visibility="Hidden" Click="GoToAdminPanel" Cursor="Hand" Background="#FF5252" Grid.Row="1" Content="Przejdź do panelu admina" BorderThickness="0" Foreground="White" HorizontalContentAlignment="Center"/>
+            
+            <StackPanel Grid.Row="2">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
