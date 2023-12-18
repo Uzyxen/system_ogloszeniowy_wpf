@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using system_ogloszeniowy_wpf.Models;
+using system_ogloszeniowy_wpf.Pages;
 
 namespace system_ogloszeniowy_wpf.Database.Methods
 {
@@ -58,6 +59,26 @@ namespace system_ogloszeniowy_wpf.Database.Methods
                 insertCommand.Parameters.AddWithValue("@Data", DateTime.Now.ToString("dd MMMM yyyy"));
 
                 insertCommand.ExecuteReader();
+            }
+        }
+
+        public static void EditOffer(Offer offer)
+        {
+            string dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "serwis_ogloszeniowy.db");
+
+            using (var db = new SqliteConnection($"Filename={dbpath}"))
+            {
+                db.Open();
+
+                var updateCommand = new SqliteCommand("UPDATE oferty SET tytul = @Tytul, opis = @Opis, kategoria = @Kategoria, lokalizacja = @Lokalizacja, odleglosc = @Odleglosc WHERE oferta_id = @OfferId", db);
+                updateCommand.Parameters.AddWithValue("@Tytul", offer.Tytul);
+                updateCommand.Parameters.AddWithValue("@Opis", offer.Opis);
+                updateCommand.Parameters.AddWithValue("@Kategoria", offer.Kategoria);
+                updateCommand.Parameters.AddWithValue("@Lokalizacja", offer.Lokalizacja);
+                updateCommand.Parameters.AddWithValue("@Odleglosc", offer.Odleglosc);
+                updateCommand.Parameters.AddWithValue("@OfferId", offer.Id);
+
+                updateCommand.ExecuteNonQuery();
             }
         }
 
