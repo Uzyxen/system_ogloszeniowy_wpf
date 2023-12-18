@@ -61,7 +61,10 @@ namespace system_ogloszeniowy_wpf.Pages
         {
             if (offersData.SelectedItem != null)
             {
+                var offer = offersData.SelectedItem as Offer;
 
+                MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+                mainWindow.Main.Navigate(new AdminPages.EditOfferPage(offer));
             }
             else
             {

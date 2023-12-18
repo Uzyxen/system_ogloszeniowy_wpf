@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using system_ogloszeniowy_wpf.Models;
 
 namespace system_ogloszeniowy_wpf.Pages.AdminPages
 {
@@ -20,9 +21,24 @@ namespace system_ogloszeniowy_wpf.Pages.AdminPages
     /// </summary>
     public partial class EditOfferPage : Page
     {
-        public EditOfferPage()
+        Offer Offer { get; set; }
+
+        public EditOfferPage(Offer offer)
         {
             InitializeComponent();
+
+            Offer = offer;
+
+            tytulTxt.Text = Offer.Tytul;
+            opisTxt.Text = Offer.Opis;
+            kategoriaTxt.Text = Offer.Kategoria;
+            lokalizacjaTxt.Text = Offer.Lokalizacja;
+            odlegloscTxt.Text = Offer.Odleglosc.ToString();
+        }
+
+        private void EditOfferButtonClicked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
