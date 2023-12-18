@@ -23,8 +23,15 @@
                         <StackPanel Orientation="Horizontal" Width="1150">
                             <StackPanel Width="950">
                                 <TextBlock Text="{Binding Tytul}" VerticalAlignment="Top" FontSize="22" Margin="0, 0, 0, 0"/>
-                                <TextBlock Text="{Binding Opis}" Margin="0, 0, 0, 3"/>
                                 <TextBlock Text="{Binding Kategoria}" Margin="0, 0, 0, 3"/>
+                                <TextBlock Text="{Binding Stanowisko}" Margin="0, 0, 0, 3"/>
+                                
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Placa_min}" Margin="0, 0, 0, 3"/>
+                                    <TextBlock Text=" - "/>
+                                    <TextBlock Text="{Binding Placa_max}" Margin="0, 0, 0, 3"/>
+                                    <TextBlock Text=" PLN "/>
+                                </StackPanel>
 
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{Binding Lokalizacja}" Margin="0, 0, 0, 3"/>

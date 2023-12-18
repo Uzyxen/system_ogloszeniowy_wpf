@@ -33,6 +33,9 @@ namespace system_ogloszeniowy_wpf.Pages.AdminPages
             offer.Tytul = tytulTxt.Text;
             offer.Opis = opisTxt.Text;
             offer.Kategoria = kategoriaTxt.Text;
+            offer.Stanowisko = stanowiskoTxt.Text;
+            offer.Placa_min = int.Parse(placaMinTxt.Text);
+            offer.Placa_max = int.Parse(placaMaxTxt.Text);
             offer.Lokalizacja = lokalizacjaTxt.Text;
             offer.Odleglosc = int.Parse(odlegloscTxt.Text);
 
