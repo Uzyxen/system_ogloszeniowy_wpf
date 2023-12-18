@@ -16,22 +16,38 @@
             <Button Click="DeleteOfferButton" Foreground="White" Background="#FF5252" BorderThickness="0" Content="Usuń" Width="100" VerticalAlignment="Top" Margin="5, 0, 0, 0"/>
         </StackPanel>
 
-        <ListView x:Name="offersData" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="520">
+        <ListView x:Name="offersData" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="520" >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal" Width="1150">
-                        <StackPanel Width="950">
-                            <TextBlock Text="{Binding Tytul}" VerticalAlignment="Top" FontSize="22" Margin="0, 0, 0, 0"/>
-                            <TextBlock Text="{Binding Opis}" Margin="0, 0, 0, 3"/>
-                            <TextBlock Text="{Binding Kategoria}" Margin="0, 0, 0, 3"/>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Width="1150">
+                            <StackPanel Width="950">
+                                <TextBlock Text="{Binding Tytul}" VerticalAlignment="Top" FontSize="22" Margin="0, 0, 0, 0"/>
+                                <TextBlock Text="{Binding Opis}" Margin="0, 0, 0, 3"/>
+                                <TextBlock Text="{Binding Kategoria}" Margin="0, 0, 0, 3"/>
 
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Lokalizacja}" Margin="0, 0, 0, 3"/>
-                                <TextBlock Text=" +"/>
-                                <TextBlock Text="{Binding Odleglosc}" Margin="0, 0, 0, 3"/>
-                                <TextBlock Text=" km"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Lokalizacja}" Margin="0, 0, 0, 3"/>
+                                    <TextBlock Text=" +"/>
+                                    <TextBlock Text="{Binding Odleglosc}" Margin="0, 0, 0, 3"/>
+                                    <TextBlock Text=" km"/>
+                                </StackPanel>
                             </StackPanel>
                         </StackPanel>
+
+                        <Border Background="#ddd">
+                            <Viewbox Height="1" />
+                        </Border>
+
+                        <StackPanel Orientation="Horizontal" Margin="5">
+                            <TextBlock Text="Opublikowano: "/>
+                            <TextBlock Text="{Binding Data}"/>
+                        </StackPanel>
+
+                        <Border Background="#ddd">
+                            <Viewbox Height="1" />
+                        </Border>
+
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

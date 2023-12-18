@@ -53,7 +53,7 @@ namespace system_ogloszeniowy_wpf.Pages
             }
             else
             {
-                MessageBox.Show("Zaznacz element!", "Błąd!", MessageBoxButton.OK);
+                MessageBox.Show("Zaznacz element!", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
@@ -65,7 +65,7 @@ namespace system_ogloszeniowy_wpf.Pages
             }
             else
             {
-                MessageBox.Show("Zaznacz element!", "Błąd!", MessageBoxButton.OK);
+                MessageBox.Show("Zaznacz element!", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
     }

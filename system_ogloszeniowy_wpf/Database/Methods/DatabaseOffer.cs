@@ -32,6 +32,7 @@ namespace system_ogloszeniowy_wpf.Database.Methods
                     offer.Kategoria = query.GetString(3);
                     offer.Lokalizacja = query.GetString(4);
                     offer.Odleglosc = query.GetInt32(5);
+                    offer.Data = query.GetString(6);
 
                     offers.Add(offer);
                 }
@@ -48,12 +49,13 @@ namespace system_ogloszeniowy_wpf.Database.Methods
             {
                 db.Open();
 
-                var insertCommand = new SqliteCommand("INSERT INTO oferty (oferta_id, tytul, opis, kategoria, lokalizacja, odleglosc) VALUES (NULL, @Tytul, @Opis, @Kategoria, @Lokalizacja, @Odleglosc)", db);
+                var insertCommand = new SqliteCommand("INSERT INTO oferty (oferta_id, tytul, opis, kategoria, lokalizacja, odleglosc, data_dodania) VALUES (NULL, @Tytul, @Opis, @Kategoria, @Lokalizacja, @Odleglosc, @Data)", db);
                 insertCommand.Parameters.AddWithValue("@Tytul", offer.Tytul);
                 insertCommand.Parameters.AddWithValue("@Opis", offer.Opis);
                 insertCommand.Parameters.AddWithValue("@Kategoria", offer.Kategoria);
                 insertCommand.Parameters.AddWithValue("@Lokalizacja", offer.Lokalizacja);
                 insertCommand.Parameters.AddWithValue("@Odleglosc", offer.Odleglosc);
+                insertCommand.Parameters.AddWithValue("@Data", DateTime.Now.ToString("dd MMMM yyyy"));
 
                 insertCommand.ExecuteReader();
             }

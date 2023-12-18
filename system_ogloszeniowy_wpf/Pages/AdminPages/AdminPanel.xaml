@@ -11,7 +11,17 @@
     <StackPanel>
         <Label Content="Panel admina" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center"/>
 
-        <Button Cursor="Hand" Content="Oferty" Click="GoToAdminOffers"/>
-        <Button Cursor="Hand" Content="Użytkownicy" Click="GoToAdminUsers"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Cursor="Hand" Click="GoToAdminOffers" Background="Transparent" Padding="20">
+                <Button.Content>
+                    <Image Source="../../Assets/briefcase.png"/>
+                </Button.Content>
+            </Button>
+            <Button Cursor="Hand" Click="GoToAdminUsers" Background="Transparent" Margin="5, 0, 0, 0">
+                <Button.Content>
+                    <Image Source="../../Assets/user.png"/>
+                </Button.Content>
+            </Button>
+        </StackPanel>
     </StackPanel>
 </Page>

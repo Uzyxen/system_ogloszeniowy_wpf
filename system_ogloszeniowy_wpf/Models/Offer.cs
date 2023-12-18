@@ -14,5 +14,6 @@ namespace system_ogloszeniowy_wpf.Models
         public string? Kategoria { get; set; }
         public string? Lokalizacja { get; set; }
         public int Odleglosc { get; set; }
+        public string? Data { get; set; }
     }
 }
