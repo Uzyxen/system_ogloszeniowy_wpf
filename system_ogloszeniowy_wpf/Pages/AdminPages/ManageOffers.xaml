@@ -11,9 +11,24 @@
     <StackPanel>
         <Label Content="Zarządzaj ofertami" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center"/>
 
-        <StackPanel Orientation="Horizontal">
-            <Button Content="Dodaj oferte" Click="GoToAddOfferPage"/>
-            <Button Content="Przeglądaj oferty w trybie admina" Click="GoToOffersPage" Cursor="Hand"/>
+        <StackPanel>
+            <Button Click="GoToAddOfferPage" Height="150" Background="Transparent" HorizontalContentAlignment="Left">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="../../Assets/add.png"/>
+                        <TextBlock Text="Przejdź do formularza, w którym możesz utworzyć i opublikować ogłoszenie" FontSize="20"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            
+            <Button Click="GoToOffersPage" Cursor="Hand" Height="150" Background="Transparent" HorizontalContentAlignment="Left" Margin="0, 5, 0, 0">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="../../Assets/edit.png"/>
+                        <TextBlock Text="Przejdź do strony z możliwością wyboru zarządzania ogłoszeniami lub użytkownikami" FontSize="20"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
         </StackPanel>
     </StackPanel>
 </Page>
