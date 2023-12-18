@@ -71,5 +71,16 @@ namespace system_ogloszeniowy_wpf.Pages
                 MessageBox.Show("Zaznacz element!", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
+        private void OfferDoubleClicked(object sender, MouseButtonEventArgs e)
+        {
+            var selectedItem = offersData.SelectedItem as Offer;
+
+            if (selectedItem != null)
+            {
+                MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+                mainWindow.Main.Navigate(new OfferInfo(selectedItem));
+            }
+        }
     }
 }

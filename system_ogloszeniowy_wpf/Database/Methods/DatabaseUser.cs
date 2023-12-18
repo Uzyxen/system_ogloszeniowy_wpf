@@ -11,6 +11,43 @@ namespace system_ogloszeniowy_wpf.Database.Methods
 {
     public class DatabaseUser
     {
+        public static User ReadUser(int id)
+        {
+            string dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "serwis_ogloszeniowy.db");
+
+            using (var db = new SqliteConnection($"Filename={dbpath}"))
+            {
+                db.Open();
+
+                var selectCommand = new SqliteCommand("SELECT * FROM uzytkownicy WHERE user_id = @Id", db);
+                selectCommand.Parameters.AddWithValue("@Id", id);
+
+                var query = selectCommand.ExecuteReader();
+
+                if (query.Read())
+                {
+                    var user = new User();
+
+                    user.Id = query.GetInt32(0);
+                    user.Imie = query.GetString(1);
+                    user.Nazwisko = query.GetString(2);
+                    user.Opis = query.GetString(3);
+                    user.Stanowisko = query.GetString(4);
+                    user.Login = query.GetString(5);
+                    user.Haslo = query.GetString(6);
+                    user.Email = query.GetString(7);
+                    user.Numer_telefonu = query.GetString(8);
+                    user.Admin = query.GetBoolean(9);
+
+                    return user;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
         public static List<User> ReadUsers()
         {
             var users = new List<User>();

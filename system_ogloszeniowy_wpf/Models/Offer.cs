@@ -14,6 +14,7 @@ namespace system_ogloszeniowy_wpf.Models
         public string? Kategoria { get; set; }
 
         public string? Stanowisko { get; set; }
+        public string? Umowa { get; set; }
         public int Placa_min { get; set; }
         public int Placa_max { get; set; }
         public string? Lokalizacja { get; set; }

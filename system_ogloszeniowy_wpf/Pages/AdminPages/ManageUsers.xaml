@@ -8,7 +8,28 @@
       d:DesignHeight="675" d:DesignWidth="1200"
       Title="ManageUsers" Background="White">
 
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <Label Content="Aplikacje o prace" HorizontalAlignment="Center" FontSize="40" FontWeight="Bold"/>
+
+        <StackPanel Orientation="Horizontal">
+            <Label Content="ID" Width="150"/>
+            <Label Content="Oferta" Width="150" HorizontalContentAlignment="Center"/>
+            <Label Content="Użytkownik" Width="150" HorizontalContentAlignment="Center"/>
+        </StackPanel>
+
+        <ListView x:Name="appsData" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="500">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Width="1000" Cursor="Hand">
+                        <Label Content="{Binding Id}" Width="150"  Background="Transparent" Foreground="#1976D2" BorderThickness="0"/>
+                        <Button Click="ShowOfferDetail" Content="{Binding Tytul}" Width="150" Background="Transparent" BorderThickness="0"/>
+                        <Button Click="ShowUserDetail" Content="{Binding Login}" Width="150" Background="Transparent" BorderThickness="0"/>
+
+                        <Button Click="AcceptApplicationButtonClicked" Foreground="White" Background="#6244DB" Content="Zaakceptuj" Width="150" BorderThickness="0" Cursor="Hand"/>
+                        <Button Click="DeclineApplicationButtonClicked" Foreground="White" Background="#FF5252" Content="Odrzuć" Width="150" BorderThickness="0" Cursor="Hand"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackPanel>
 </Page>

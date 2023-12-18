@@ -18,14 +18,19 @@ namespace system_ogloszeniowy_wpf.Database
             {
                 db.Open();
 
-                string usersTableCommand = "CREATE TABLE IF NOT EXISTS uzytkownicy (user_id INTEGER PRIMARY KEY AUTOINCREMENT, imie NVARCHAR(50), nazwisko NVARCHAR(50), opis NVARCHAR(2000), stanowisko NVARCHAR(30), login NVARCHAR(20), haslo NVARCHAR(20), email NVARCHAR(255), numer_telefonu NVARCHAR(16), czy_admin bool)";
+                string usersTableCommand = "CREATE TABLE IF NOT EXISTS uzytkownicy (user_id INTEGER PRIMARY KEY AUTOINCREMENT, imie NVARCHAR(50), nazwisko NVARCHAR(50), opis NVARCHAR(3000), stanowisko NVARCHAR(30), login NVARCHAR(20), haslo NVARCHAR(20), email NVARCHAR(255), numer_telefonu NVARCHAR(16), czy_admin bool)";
                 var createUsersTable = new SqliteCommand(usersTableCommand, db);
 
-                string offersTableCommand = "CREATE TABLE IF NOT EXISTS oferty (oferta_id INTEGER PRIMARY KEY AUTOINCREMENT, tytul NVARCHAR(100), opis NVARCHAR(1000), kategoria NVARCHAR(30), stanowisko NVARCHAR(50), placa_min INTEGER, placa_max INTEGER, lokalizacja NVARCHAR(50), odleglosc INTEGER, data_dodania DATE)";
+                string offersTableCommand = "CREATE TABLE IF NOT EXISTS oferty (oferta_id INTEGER PRIMARY KEY AUTOINCREMENT, tytul NVARCHAR(100), opis NVARCHAR(1000), kategoria NVARCHAR(30), stanowisko NVARCHAR(50), umowa NVARCHAR(15), placa_min INTEGER, placa_max INTEGER, lokalizacja NVARCHAR(50), odleglosc INTEGER, data_dodania DATE)";
                 var createOffersTable = new SqliteCommand(offersTableCommand, db);
+
+                string appsTableCommand = "CREATE TABLE IF NOT EXISTS aplikacje (aplikacja_id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, oferta_id INTEGER, login NVARCHAR(20), tytul NVARCHAR(100))";
+                var createAppsTable = new SqliteCommand(appsTableCommand, db);
 
                 createUsersTable.ExecuteReader();
                 createOffersTable.ExecuteReader();
+                createAppsTable.ExecuteReader();
+                
             }
         }
     }

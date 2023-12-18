@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using system_ogloszeniowy_wpf.Models;
 
 namespace system_ogloszeniowy_wpf.Pages.AdminPages
 {
@@ -23,6 +24,52 @@ namespace system_ogloszeniowy_wpf.Pages.AdminPages
         public ManageUsers()
         {
             InitializeComponent();
+
+            appsData.ItemsSource = Database.Methods.DatabaseApp.ReadApps();
+        }
+
+        private void ShowOfferDetail(object sender, RoutedEventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            AppModel selectedItem = (AppModel)clickedButton.DataContext;
+
+            Offer offer = new Offer();
+            offer = Database.Methods.DatabaseOffer.ReadOffer(selectedItem.Offer_Id);
+
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.Main.Navigate(new OfferInfo(offer));
+        }
+
+        private void ShowUserDetail(object sender, RoutedEventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            AppModel selectedItem = (AppModel)clickedButton.DataContext;
+
+            User user = new User();
+            user = Database.Methods.DatabaseUser.ReadUser(selectedItem.User_id);
+
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.Main.Navigate(new AdminPages.UserPage(user));
+        }
+
+        private void AcceptApplicationButtonClicked(object sender, RoutedEventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            AppModel selectedItem = (AppModel)clickedButton.DataContext;
+
+            Database.Methods.DatabaseApp.DeleteApp(selectedItem.Id);
+
+            appsData.ItemsSource = Database.Methods.DatabaseApp.ReadApps();
+        }
+
+        private void DeclineApplicationButtonClicked(object sender, RoutedEventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            AppModel selectedItem = (AppModel)clickedButton.DataContext;
+
+            Database.Methods.DatabaseApp.DeleteApp(selectedItem.Id);
+
+            appsData.ItemsSource = Database.Methods.DatabaseApp.ReadApps();
         }
     }
 }

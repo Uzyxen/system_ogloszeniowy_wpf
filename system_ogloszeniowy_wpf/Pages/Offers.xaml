@@ -16,7 +16,7 @@
             <Button Click="DeleteOfferButton" Foreground="White" Background="#FF5252" BorderThickness="0" Content="Usuń" Width="100" VerticalAlignment="Top" Margin="5, 0, 0, 0"/>
         </StackPanel>
 
-        <ListView x:Name="offersData" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="520" >
+        <ListView MouseDoubleClick="OfferDoubleClicked" x:Name="offersData" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="520" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>

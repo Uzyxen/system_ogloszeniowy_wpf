@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using system_ogloszeniowy_wpf.Models;
 
 namespace system_ogloszeniowy_wpf.Pages
 {
@@ -20,9 +21,40 @@ namespace system_ogloszeniowy_wpf.Pages
     /// </summary>
     public partial class OfferInfo : Page
     {
-        public OfferInfo()
+        Offer Offer { get; set; }
+        public OfferInfo(Offer offer)
         {
             InitializeComponent();
+
+            Offer = offer;
+
+            TitleBlock.Text = Offer.Tytul;
+            DescriptionBlock.Text = Offer.Opis;
+            payMinBlock.Text = Offer.Placa_min.ToString();
+            payMaxBlock.Text = Offer.Placa_max.ToString();
+            LocationBlock.Text = Offer.Lokalizacja;
+            positionBlock.Text = Offer.Stanowisko;
+            contractBlock.Text = Offer.Umowa;
+        }
+
+        private void ApplyButtonClicked(object sender, RoutedEventArgs e)
+        {
+            if(App.loggedUser != null)
+            {
+                if(App.loggedUser.Admin == true)
+                {
+                    MessageBox.Show("Nie możesz aplikować o prace jako admin!", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {
+                    Database.Methods.DatabaseApp.AddApp(Offer);
+                }
+            }
+            else
+            {
+                var mainWindow = (MainWindow)Application.Current.MainWindow;
+                mainWindow.Main.Navigate(new Login());
+            }
         }
     }
 }

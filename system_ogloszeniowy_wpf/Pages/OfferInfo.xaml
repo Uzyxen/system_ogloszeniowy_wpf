@@ -5,10 +5,46 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:system_ogloszeniowy_wpf.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="OfferInfo">
+      d:DesignHeight="675" d:DesignWidth="1200"
+      Title="OfferInfo" Background="White">
 
-    <Grid>
-        
-    </Grid>
+    <StackPanel Margin="50">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock TextWrapping="Wrap" x:Name="TitleBlock" Width="500" Text="Vuejs developer" FontSize="25" VerticalAlignment="Center" Padding="10" FontWeight="Bold"/>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock x:Name="DescriptionBlock" FontSize="15" Padding="10" HorizontalAlignment="Left" TextWrapping="Wrap" Width="500" VerticalAlignment="Center" Text="Poszukujemy zdolnego do pracy vuejs developera, oferujemy dobre wynagrodzenie itp itd. oczekujemy 10 lat doświadczenia komercyjnego w javascript."/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <TextBlock Text="Wynagrodzenie: " FontWeight="Bold" FontSize="13"/>
+            <TextBlock x:Name="payMinBlock" Text="12 000" FontSize="13"/>
+            <TextBlock Text=" - " FontSize="13"/>
+            <TextBlock x:Name="payMaxBlock" Text="20 000" FontSize="13"/>
+            <TextBlock Text=" PLN" FontSize="13"/>
+        </StackPanel>
+
+        <StackPanel Margin="10">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Lokalizacja: " FontWeight="Bold" FontSize="13"/>
+                <TextBlock x:Name="LocationBlock" Text="Limanowa" FontSize="13"/>
+                <TextBlock Text=" +" FontSize="13"/>
+                <TextBlock x:Name="DistanceBlock" Text="30" FontSize="13"/>
+                <TextBlock Text=" km" FontSize="13"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Stanowisko: " FontWeight="Bold" FontSize="13"/>
+                <TextBlock x:Name="positionBlock" Text="Senior vuejs developer" FontSize="13"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Umowa: " FontWeight="Bold" FontSize="13"/>
+                <TextBlock x:Name="contractBlock" Text="B2B" FontSize="13"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Button Click="ApplyButtonClicked" BorderThickness="0" Height="40" FontSize="15" Background="#6244DB" Foreground="White" Margin="0, 50, 0, 0" Content="Złóż podanie" Width="300" HorizontalAlignment="Left" Cursor="Hand"/>
+    </StackPanel>
 </Page>
