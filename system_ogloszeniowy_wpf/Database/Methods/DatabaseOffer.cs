@@ -12,6 +12,57 @@ namespace system_ogloszeniowy_wpf.Database.Methods
 {
     public class DatabaseOffer
     {
+        public static List<Offer> SearchOffers(string value, string category, string location, int radius)
+        {
+            var offers = new List<Offer>();
+            string dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "serwis_ogloszeniowy.db");
+
+            using (var db = new SqliteConnection($"Filename={dbpath}"))
+            {
+                db.Open();
+
+                string query_s = $"SELECT * FROM oferty WHERE (tytul LIKE '%{value}%' OR opis LIKE '%{value}%')";
+
+                if (!string.IsNullOrEmpty(category))
+                {
+                    query_s += $" AND kategoria LIKE '%{category}%'";
+                }
+
+                if (!string.IsNullOrEmpty(location))
+                {
+                    query_s += $" AND lokalizacja LIKE '%{location}%'";
+                }
+
+                if(radius > 0)
+                {
+                    query_s += $" AND odleglosc <= '{radius}'";
+                }
+
+                var selectCommand = new SqliteCommand(query_s, db);
+                var query = selectCommand.ExecuteReader();
+
+                while (query.Read())
+                {
+                    var offer = new Offer();
+                    offer.Id = query.GetInt32(0);
+                    offer.Tytul = query.GetString(1);
+                    offer.Opis = query.GetString(2);
+                    offer.Kategoria = query.GetString(3);
+                    offer.Stanowisko = query.GetString(4);
+                    offer.Umowa = query.GetString(5);
+                    offer.Placa_min = query.GetInt32(6);
+                    offer.Placa_max = query.GetInt32(7);
+                    offer.Lokalizacja = query.GetString(8);
+                    offer.Odleglosc = query.GetInt32(9);
+                    offer.Data = query.GetString(10);
+
+                    offers.Add(offer);
+                }
+            }
+
+            return offers;
+        }
+
         public static List<Offer> ReadOffers()
         {
             var offers = new List<Offer>();

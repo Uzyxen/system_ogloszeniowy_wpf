@@ -47,9 +47,15 @@ namespace system_ogloszeniowy_wpf.Pages
 
         private void SearchForOffers(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(SearchInput.Text))
+            if (string.IsNullOrEmpty(searchInput.Text))
             {
-                MessageBox.Show("Uzupełnij pola!", "Błąd", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Uzupełnij pole!", "Błąd", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MainWindow mainWindow = (system_ogloszeniowy_wpf.MainWindow)App.Current.MainWindow;
+
+                mainWindow.Main.Navigate(new SearchedOffers(searchInput.Text, categoryInput.Text, locationInput.Text, int.Parse(radiusInput.Text)));
             }
         }
 

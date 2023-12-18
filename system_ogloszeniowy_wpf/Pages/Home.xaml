@@ -64,10 +64,25 @@
 
                 <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="0, 40, 0, 0">
                     <StackPanel Orientation="Horizontal">
-                        <TextBox x:Name="SearchInput" Width="350" Height="40" VerticalContentAlignment="Center"/>
-                        <TextBox Width="200" VerticalContentAlignment="Center"/>
-                        <TextBox Width="200" VerticalContentAlignment="Center"/>
-                        <TextBox Width="80" VerticalContentAlignment="Center"/>
+                        <StackPanel>
+                            <Label Content="Treść..."/>
+                            <TextBox x:Name="searchInput" Width="350" Height="40" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+                        
+                        <StackPanel>
+                            <Label Content="Kategoria"/>
+                            <TextBox x:Name="categoryInput" Width="200" Height="40" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <Label Content="Lokalizacja"/>
+                            <TextBox x:Name="locationInput" Width="200" Height="40" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <Label Content="Zasięg"/>
+                            <TextBox x:Name="radiusInput" Text="0" Width="80" Height="40" VerticalContentAlignment="Center"/>
+                        </StackPanel>
                     </StackPanel>
 
                     <Button Click="SearchForOffers" Content="Szukaj" Background="#6244DB" HorizontalAlignment="Right" Width="120" Height="40" Margin="0, 20, 0, 0" Foreground="White" FontSize="18" Cursor="Hand" BorderThickness="0"/>

@@ -32,6 +32,10 @@ namespace system_ogloszeniowy_wpf.Pages.AdminPages
             tytulTxt.Text = Offer.Tytul;
             opisTxt.Text = Offer.Opis;
             kategoriaTxt.Text = Offer.Kategoria;
+            stanowiskoTxt.Text = Offer.Stanowisko;
+            umowaTxt.Text = Offer.Umowa;
+            placaMinTxt.Text = offer.Placa_min.ToString();
+            placaMaxTxt.Text = offer.Placa_max.ToString();
             lokalizacjaTxt.Text = Offer.Lokalizacja;
             odlegloscTxt.Text = Offer.Odleglosc.ToString();
         }
@@ -41,6 +45,10 @@ namespace system_ogloszeniowy_wpf.Pages.AdminPages
             Offer.Tytul = tytulTxt.Text;
             Offer.Opis = opisTxt.Text;
             Offer.Kategoria = kategoriaTxt.Text;
+            Offer.Stanowisko = stanowiskoTxt.Text;
+            Offer.Umowa = umowaTxt.Text;
+            Offer.Placa_min = int.Parse(placaMinTxt.Text);
+            Offer.Placa_max = int.Parse(placaMaxTxt.Text);
             Offer.Lokalizacja = lokalizacjaTxt.Text;
             Offer.Odleglosc = int.Parse(odlegloscTxt.Text);
 
