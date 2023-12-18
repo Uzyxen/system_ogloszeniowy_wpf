@@ -26,7 +26,12 @@ namespace system_ogloszeniowy_wpf.Pages.AdminPages
             InitializeComponent();
 
             FirstNameBlock.Text = user.Imie;
-            SecondNameBlock.Text = user.Nazwisko;
+            LastNameBlock.Text = user.Nazwisko;
+            PositionBlock.Text = user.Stanowisko;
+            EmailBlock.Text = user.Email;
+            DescriptionBlock.Text = user.Opis;
+            NumberBlock.Text = user.Numer_telefonu;
+            EducationBlock.Text = user.Wyksztalcenie;
         }
     }
 }

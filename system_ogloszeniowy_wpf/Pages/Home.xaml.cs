@@ -57,7 +57,7 @@ namespace system_ogloszeniowy_wpf.Pages
         {
             MainWindow mainWindow = (system_ogloszeniowy_wpf.MainWindow)App.Current.MainWindow;
 
-            mainWindow.Main.Navigate(new MyAccount());
+            mainWindow.Main.Navigate(new MyAccount(App.loggedUser));
         }
 
         private void GoToLoginPage(object sender, RoutedEventArgs e)

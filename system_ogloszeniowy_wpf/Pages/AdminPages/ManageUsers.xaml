@@ -26,7 +26,7 @@
                         <Button Click="ShowUserDetail" Content="{Binding Login}" Width="150" Background="Transparent" BorderThickness="0"/>
 
                         <Button Click="AcceptApplicationButtonClicked" Foreground="White" Background="#6244DB" Content="Zaakceptuj" Width="150" BorderThickness="0" Cursor="Hand"/>
-                        <Button Click="DeclineApplicationButtonClicked" Foreground="White" Background="#FF5252" Content="Odrzuć" Width="150" BorderThickness="0" Cursor="Hand"/>
+                        <Button Click="DeclineApplicationButtonClicked" Foreground="White" Margin="5, 0, 0, 0" Background="#FF5252" Content="Odrzuć" Width="150" BorderThickness="0" Cursor="Hand"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

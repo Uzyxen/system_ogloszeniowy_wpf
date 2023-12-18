@@ -78,10 +78,12 @@ namespace system_ogloszeniowy_wpf.Pages
             {
                 var user = new User();
 
+                user.Zdjecie = "";
                 user.Imie = "";
                 user.Nazwisko = "";
                 user.Opis = "";
                 user.Stanowisko = "";
+                user.Wyksztalcenie = "";
                 user.Login = login;
                 user.Haslo = passwordTxt.Password.ToString();
                 user.Email = emailTxt.Text;

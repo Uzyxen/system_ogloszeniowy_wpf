@@ -48,6 +48,9 @@ namespace system_ogloszeniowy_wpf.Pages
                 else
                 {
                     Database.Methods.DatabaseApp.AddApp(Offer);
+
+                    var mainWindow = (MainWindow)Application.Current.MainWindow;
+                    mainWindow.Main.Navigate(new Home());
                 }
             }
             else
