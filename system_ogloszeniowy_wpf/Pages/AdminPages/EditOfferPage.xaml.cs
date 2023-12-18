@@ -38,7 +38,16 @@ namespace system_ogloszeniowy_wpf.Pages.AdminPages
 
         private void EditOfferButtonClicked(object sender, RoutedEventArgs e)
         {
+            Offer.Tytul = tytulTxt.Text;
+            Offer.Opis = opisTxt.Text;
+            Offer.Kategoria = kategoriaTxt.Text;
+            Offer.Lokalizacja = lokalizacjaTxt.Text;
+            Offer.Odleglosc = int.Parse(odlegloscTxt.Text);
 
+            Database.Methods.DatabaseOffer.EditOffer(Offer);
+
+            var mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.Main.Navigate(new Offers());
         }
     }
 }

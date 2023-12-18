@@ -25,7 +25,7 @@
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="../../Assets/edit.png"/>
-                        <TextBlock Text="Przejdź do strony z możliwością wyboru zarządzania ogłoszeniami lub użytkownikami" FontSize="20"/>
+                        <TextBlock Text="Przejdź do wszystkich ogłoszeń w trybie administratora z możliwością edycji i usuwania" FontSize="20"/>
                     </StackPanel>
                 </Button.Content>
             </Button>
