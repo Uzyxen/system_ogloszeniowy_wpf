@@ -18,7 +18,7 @@
 
         <StackPanel Orientation="Horizontal">
             <Label Content="ID" Width="150"/>
-            <Label Content="Oferta" Width="150" HorizontalContentAlignment="Center"/>
+            <Label Content="Firma" Width="150" HorizontalContentAlignment="Center"/>
             <Label Content="Użytkownik" Width="150" HorizontalContentAlignment="Center"/>
         </StackPanel>
 
@@ -27,7 +27,7 @@
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Width="1000" Cursor="Hand">
                         <Label Content="{Binding Id}" Width="150"  Background="Transparent" Foreground="#1976D2" BorderThickness="0"/>
-                        <Button Click="ShowOfferDetail" Content="{Binding Tytul}" Width="150" Background="Transparent" BorderThickness="0"/>
+                        <Button Click="ShowOfferDetail" Content="{Binding Firma}" Width="150" Background="Transparent" BorderThickness="0"/>
                         <Button Click="ShowUserDetail" Content="{Binding Login}" Width="150" Background="Transparent" BorderThickness="0"/>
 
                         <Button Click="AcceptApplicationButtonClicked" Foreground="White" Background="#6244DB" Content="Zaakceptuj" Width="150" BorderThickness="0" Cursor="Hand"/>

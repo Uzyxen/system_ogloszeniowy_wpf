@@ -57,7 +57,7 @@ namespace system_ogloszeniowy_wpf.Pages.AdminPages
             Button clickedButton = (Button)sender;
             AppModel selectedItem = (AppModel)clickedButton.DataContext;
 
-            Database.Methods.DatabaseApp.DeleteApp(selectedItem.Id);
+            Database.Methods.DatabaseApp.AcceptApp(selectedItem.User_id, selectedItem.Id, $"Pracuje w: {selectedItem.Firma}");
 
             appsData.ItemsSource = Database.Methods.DatabaseApp.ReadApps();
         }

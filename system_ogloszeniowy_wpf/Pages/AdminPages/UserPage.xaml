@@ -53,6 +53,11 @@
                     </StackPanel>
 
                     <StackPanel>
+                        <Label Content="Github"/>
+                        <TextBlock HorizontalAlignment="Left" x:Name="GithubBlock" Width="300" TextWrapping="Wrap" Height="20" FontSize="12" Margin="5, 0, 0, 0" FontWeight="Bold"/>
+                    </StackPanel>
+
+                    <StackPanel>
                         <Label Content="Wykształcenie"/>
                         <TextBlock x:Name="EducationBlock" Margin="5, 0, 0, 0" FontWeight="Bold"/>
                     </StackPanel>

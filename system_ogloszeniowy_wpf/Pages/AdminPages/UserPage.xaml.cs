@@ -32,6 +32,7 @@ namespace system_ogloszeniowy_wpf.Pages.AdminPages
             DescriptionBlock.Text = user.Opis;
             NumberBlock.Text = user.Numer_telefonu;
             EducationBlock.Text = user.Wyksztalcenie;
+            GithubBlock.Text = user.Github;
         }
 
         private void GoToHomePageClicked(object sender, RoutedEventArgs e)

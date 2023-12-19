@@ -53,6 +53,18 @@ namespace system_ogloszeniowy_wpf.Pages
                     var mainWindow = (MainWindow)Application.Current.MainWindow;
                     mainWindow.Main.Navigate(new Home());
                 }
+
+                if(App.loggedUser.Status == "bezrobotny")
+                {
+                    MessageBox.Show("Nie możesz aplikować o prace, ponieważ już ją posiadasz!", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {
+                    Database.Methods.DatabaseApp.AddApp(Offer);
+
+                    var mainWindow = (MainWindow)Application.Current.MainWindow;
+                    mainWindow.Main.Navigate(new Home());
+                }
             }
             else
             {
