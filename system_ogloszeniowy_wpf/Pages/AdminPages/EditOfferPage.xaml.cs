@@ -38,6 +38,7 @@ namespace system_ogloszeniowy_wpf.Pages.AdminPages
             placaMaxTxt.Text = offer.Placa_max.ToString();
             lokalizacjaTxt.Text = Offer.Lokalizacja;
             odlegloscTxt.Text = Offer.Odleglosc.ToString();
+            firmaTxt.Text = Offer.Firma;
         }
 
         private void EditOfferButtonClicked(object sender, RoutedEventArgs e)
@@ -51,6 +52,7 @@ namespace system_ogloszeniowy_wpf.Pages.AdminPages
             Offer.Placa_max = int.Parse(placaMaxTxt.Text);
             Offer.Lokalizacja = lokalizacjaTxt.Text;
             Offer.Odleglosc = int.Parse(odlegloscTxt.Text);
+            Offer.Firma = firmaTxt.Text;
 
             Database.Methods.DatabaseOffer.EditOffer(Offer);
 

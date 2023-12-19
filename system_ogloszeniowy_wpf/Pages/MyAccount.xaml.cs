@@ -43,8 +43,13 @@ namespace system_ogloszeniowy_wpf.Pages
 
         private void UpdateUserData(object sender, RoutedEventArgs e)
         {
-            ComboBoxItem typeItem = (ComboBoxItem)educationBox.SelectedItem;
-            string value = typeItem.Content.ToString();
+            string value = "";
+
+            if((ComboBoxItem)educationBox.SelectedItem != null)
+            {
+                ComboBoxItem typeItem = (ComboBoxItem)educationBox.SelectedItem;
+                value = typeItem.Content.ToString();
+            }
 
             User.Stanowisko = PositionBox.Text;
             User.Imie = FirstNameBox.Text;

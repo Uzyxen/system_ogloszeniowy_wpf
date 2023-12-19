@@ -35,6 +35,7 @@ namespace system_ogloszeniowy_wpf.Pages
             LocationBlock.Text = Offer.Lokalizacja;
             positionBlock.Text = Offer.Stanowisko;
             contractBlock.Text = Offer.Umowa;
+            companyBlock.Text = Offer.Firma;
         }
 
         private void ApplyButtonClicked(object sender, RoutedEventArgs e)

@@ -55,6 +55,7 @@ namespace system_ogloszeniowy_wpf.Database.Methods
                     offer.Lokalizacja = query.GetString(8);
                     offer.Odleglosc = query.GetInt32(9);
                     offer.Data = query.GetString(10);
+                    offer.Firma = query.GetString(11);
 
                     offers.Add(offer);
                 }
@@ -89,6 +90,7 @@ namespace system_ogloszeniowy_wpf.Database.Methods
                     offer.Lokalizacja = query.GetString(8);
                     offer.Odleglosc = query.GetInt32(9);
                     offer.Data = query.GetString(10);
+                    offer.Firma = query.GetString(11);
 
                     offers.Add(offer);
                 }
@@ -146,6 +148,7 @@ namespace system_ogloszeniowy_wpf.Database.Methods
                     offer.Lokalizacja = query.GetString(8);
                     offer.Odleglosc = query.GetInt32(9);
                     offer.Data = query.GetString(10);
+                    offer.Firma = query.GetString(11);
 
                     return offer;
                 }
@@ -164,7 +167,7 @@ namespace system_ogloszeniowy_wpf.Database.Methods
             {
                 db.Open();
 
-                var insertCommand = new SqliteCommand("INSERT INTO oferty (oferta_id, tytul, opis, kategoria, stanowisko, umowa, placa_min, placa_max, lokalizacja, odleglosc, data_dodania) VALUES (NULL, @Tytul, @Opis, @Kategoria, @Stanowisko, @Umowa, @Placa_min, @Placa_max, @Lokalizacja, @Odleglosc, @Data)", db);
+                var insertCommand = new SqliteCommand("INSERT INTO oferty (oferta_id, tytul, opis, kategoria, stanowisko, umowa, placa_min, placa_max, lokalizacja, odleglosc, data_dodania, firma) VALUES (NULL, @Tytul, @Opis, @Kategoria, @Stanowisko, @Umowa, @Placa_min, @Placa_max, @Lokalizacja, @Odleglosc, @Data, @Firma)", db);
                 insertCommand.Parameters.AddWithValue("@Tytul", offer.Tytul);
                 insertCommand.Parameters.AddWithValue("@Opis", offer.Opis);
                 insertCommand.Parameters.AddWithValue("@Kategoria", offer.Kategoria);
@@ -175,6 +178,7 @@ namespace system_ogloszeniowy_wpf.Database.Methods
                 insertCommand.Parameters.AddWithValue("@Lokalizacja", offer.Lokalizacja);
                 insertCommand.Parameters.AddWithValue("@Odleglosc", offer.Odleglosc);
                 insertCommand.Parameters.AddWithValue("@Data", DateTime.Now.ToString("dd MMMM yyyy"));
+                insertCommand.Parameters.AddWithValue("@Firma", offer.Firma);
 
                 insertCommand.ExecuteReader();
             }
@@ -188,7 +192,7 @@ namespace system_ogloszeniowy_wpf.Database.Methods
             {
                 db.Open();
 
-                var updateCommand = new SqliteCommand("UPDATE oferty SET tytul = @Tytul, opis = @Opis, kategoria = @Kategoria, stanowisko = @Stanowisko, umowa = @Umowa, placa_min = @Placa_min, placa_max = @Placa_max, lokalizacja = @Lokalizacja, odleglosc = @Odleglosc WHERE oferta_id = @OfferId", db);
+                var updateCommand = new SqliteCommand("UPDATE oferty SET tytul = @Tytul, opis = @Opis, kategoria = @Kategoria, stanowisko = @Stanowisko, umowa = @Umowa, placa_min = @Placa_min, placa_max = @Placa_max, lokalizacja = @Lokalizacja, odleglosc = @Odleglosc, firma = @Firma WHERE oferta_id = @OfferId", db);
                 updateCommand.Parameters.AddWithValue("@Tytul", offer.Tytul);
                 updateCommand.Parameters.AddWithValue("@Opis", offer.Opis);
                 updateCommand.Parameters.AddWithValue("@Kategoria", offer.Kategoria);
@@ -198,6 +202,7 @@ namespace system_ogloszeniowy_wpf.Database.Methods
                 updateCommand.Parameters.AddWithValue("@Placa_max", offer.Placa_max);
                 updateCommand.Parameters.AddWithValue("@Lokalizacja", offer.Lokalizacja);
                 updateCommand.Parameters.AddWithValue("@Odleglosc", offer.Odleglosc);
+                updateCommand.Parameters.AddWithValue("@Firma", offer.Firma);
                 updateCommand.Parameters.AddWithValue("@OfferId", offer.Id);
 
                 updateCommand.ExecuteNonQuery();

@@ -28,7 +28,7 @@
                         <StackPanel Orientation="Horizontal" Width="1150">
                             <StackPanel Width="950">
                                 <TextBlock Text="{Binding Tytul}" VerticalAlignment="Top" FontSize="22" Margin="0, 0, 0, 0"/>
-                                <TextBlock Text="{Binding Kategoria}" Margin="0, 0, 0, 3"/>
+                                <TextBlock Text="{Binding Firma}" Margin="0, 0, 0, 3" FontWeight="Bold"/>
                                 <TextBlock Text="{Binding Stanowisko}" Margin="0, 0, 0, 3"/>
                                 
                                 <StackPanel Orientation="Horizontal">

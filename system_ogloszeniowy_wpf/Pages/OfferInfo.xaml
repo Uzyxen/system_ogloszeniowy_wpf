@@ -50,6 +50,11 @@
                     <TextBlock Text="Umowa: " FontWeight="Bold" FontSize="13"/>
                     <TextBlock x:Name="contractBlock" Text="B2B" FontSize="13"/>
                 </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Firma: " FontWeight="Bold" FontSize="13"/>
+                    <TextBlock x:Name="companyBlock" Text="B2B" FontSize="13"/>
+                </StackPanel>
             </StackPanel>
 
             <Button Click="ApplyButtonClicked" BorderThickness="0" Height="40" FontSize="15" Background="#6244DB" Foreground="White" Margin="0, 50, 0, 0" Content="Złóż podanie" Width="300" HorizontalAlignment="Left" Cursor="Hand"/>

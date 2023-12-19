@@ -39,6 +39,7 @@ namespace system_ogloszeniowy_wpf.Pages.AdminPages
             offer.Placa_max = int.Parse(placaMaxTxt.Text);
             offer.Lokalizacja = lokalizacjaTxt.Text;
             offer.Odleglosc = int.Parse(odlegloscTxt.Text);
+            offer.Firma = firmaTxt.Text;
 
             Database.Methods.DatabaseOffer.AddOffer(offer);
 
