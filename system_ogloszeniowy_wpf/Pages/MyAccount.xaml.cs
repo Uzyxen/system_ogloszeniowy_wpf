@@ -39,6 +39,15 @@ namespace system_ogloszeniowy_wpf.Pages
             educationBox.Text = User.Wyksztalcenie;
             GithubBox.Text = User.Github;
             StatusBlock.Text = User.Status;
+
+            if(User.Status == "bezrobotny")
+            {
+                fireFromJobBtn.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                fireFromJobBtn.Visibility = Visibility.Visible;
+            }
         }
 
         private void UpdateUserData(object sender, RoutedEventArgs e)
@@ -79,6 +88,17 @@ namespace system_ogloszeniowy_wpf.Pages
             {
                 mainWindow.Main.GoBack();
             }
+        }
+
+        private void FireFromJobButtonClicked(object sender, RoutedEventArgs e)
+        {
+            Database.Methods.DatabaseUser.FireFromJob();
+
+            User = Database.Methods.DatabaseUser.ReadUser(App.loggedUser.Id);
+            App.loggedUser = User;
+
+            StatusBlock.Text = User.Status;
+            fireFromJobBtn.Visibility = Visibility.Hidden;
         }
     }
 }

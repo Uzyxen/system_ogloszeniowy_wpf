@@ -63,6 +63,8 @@
                             <Border BorderBrush="Gray" BorderThickness="1">
                                 <TextBlock x:Name="StatusBlock" Width="150" Height="19" FontSize="12"/>
                             </Border>
+
+                            <Button x:Name="fireFromJobBtn" Visibility="Hidden" Click="FireFromJobButtonClicked" Cursor="Hand" Content="Zwolnij się" Background="#FF5252" Foreground="White" BorderThickness="0" Margin="0, 5, 0, 0"/>
                         </StackPanel>
                     </StackPanel>
 

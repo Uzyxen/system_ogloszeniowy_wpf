@@ -117,6 +117,21 @@ namespace system_ogloszeniowy_wpf.Database.Methods
             }
         }
 
+        public static void FireFromJob()
+        {
+            string dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "serwis_ogloszeniowy.db");
+
+            using (var db = new SqliteConnection($"Filename={dbpath}"))
+            {
+                db.Open();
+
+                var updateCommand = new SqliteCommand("UPDATE uzytkownicy SET status = 'bezrobotny' WHERE user_id = @UserId", db);
+                updateCommand.Parameters.AddWithValue("@UserId", App.loggedUser.Id);
+
+                updateCommand.ExecuteNonQuery();
+            }
+        }
+
         public static void AddUser(User user)
         {
             string dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "serwis_ogloszeniowy.db");
