@@ -8,7 +8,32 @@
       d:DesignHeight="675" d:DesignWidth="1200"
       Title="MyApplications" Background="White">
 
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <Button Click="GoToHomePageClicked" HorizontalAlignment="Left" Width="30" Background="Transparent">
+            <Button.Content>
+                <Image Source="../Assets/left_arrow.png"/>
+            </Button.Content>
+        </Button>
+        <Label Content="Moje aplikacje o prace" HorizontalAlignment="Center" FontSize="40" FontWeight="Bold"/>
+
+        <StackPanel Orientation="Horizontal">
+            <Label Content="ID" Width="150"/>
+            <Label Content="Firma" Width="150" HorizontalContentAlignment="Center"/>
+            <Label Content="Status" Width="150" HorizontalContentAlignment="Center"/>
+        </StackPanel>
+
+        <ListView x:Name="appsData" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="500">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Width="1000" Cursor="Hand">
+                        <Label Content="{Binding Id}" Width="150"  Background="Transparent" Foreground="#1976D2" BorderThickness="0"/>
+                        <Button Click="ShowOfferDetail" Content="{Binding Firma}" Width="150" Background="Transparent" BorderThickness="0"/>
+                        <Label VerticalAlignment="Center" HorizontalContentAlignment="Center" Content="{Binding Status}" Width="150" Background="Transparent"/>
+
+                        <Button Click="CancelApplicationButtonClicked" Foreground="White" Margin="50, 0, 0, 0" Background="#FF5252" Content="Anuluj" Width="150" BorderThickness="0" Cursor="Hand"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackPanel>
 </Page>

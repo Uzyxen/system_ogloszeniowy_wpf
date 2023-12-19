@@ -100,5 +100,12 @@ namespace system_ogloszeniowy_wpf.Pages
             StatusBlock.Text = User.Status;
             fireFromJobBtn.Visibility = Visibility.Hidden;
         }
+
+        private void GoToMyApplications(object sender, RoutedEventArgs e)
+        {
+
+            MainWindow mainWindow = (system_ogloszeniowy_wpf.MainWindow)App.Current.MainWindow;
+            mainWindow.Main.Navigate(new MyApplications());
+        }
     }
 }

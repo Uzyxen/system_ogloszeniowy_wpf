@@ -13,5 +13,6 @@ namespace system_ogloszeniowy_wpf.Models
         public int Offer_Id { get; set; }
         public string? Firma { get; set; }
         public string? Login { get; set; }
+        public string? Status { get; set; }
     }
 }
