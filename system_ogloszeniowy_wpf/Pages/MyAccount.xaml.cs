@@ -37,6 +37,8 @@ namespace system_ogloszeniowy_wpf.Pages
             NumberBox.Text = User.Numer_telefonu;
             EmailBox.Text = User.Email;
             educationBox.Text = User.Wyksztalcenie;
+            GithubBox.Text = User.Github;
+            StatusBlock.Text = User.Status;
         }
 
         private void UpdateUserData(object sender, RoutedEventArgs e)
@@ -51,6 +53,7 @@ namespace system_ogloszeniowy_wpf.Pages
             User.Numer_telefonu = NumberBox.Text;
             User.Email = EmailBox.Text;
             User.Wyksztalcenie = value;
+            User.Github = GithubBox.Text;
 
             Database.Methods.DatabaseUser.EditUser(User);
         }

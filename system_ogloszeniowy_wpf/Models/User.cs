@@ -15,6 +15,8 @@ namespace system_ogloszeniowy_wpf.Models
         public string? Opis { get; set; }
         public string? Stanowisko { get; set; }
         public string? Wyksztalcenie { get; set; }
+        public string? Github { get; set; }
+        public string? Status { get; set; }
         public string? Login { get; set; }
         public string? Haslo { get; set; }
         public string? Email { get; set; }

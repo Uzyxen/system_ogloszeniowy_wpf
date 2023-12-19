@@ -35,17 +35,19 @@ namespace system_ogloszeniowy_wpf.Database.Methods
                     user.Opis = query.GetString(4);
                     user.Stanowisko = query.GetString(5);
                     user.Wyksztalcenie = query.GetString(6);
-                    user.Login = query.GetString(7);
-                    user.Haslo = query.GetString(8);
-                    user.Email = query.GetString(9);
-                    user.Numer_telefonu = query.GetString(10);
-                    user.Admin = query.GetBoolean(11);
+                    user.Github = query.GetString(7);
+                    user.Status = query.GetString(8);
+                    user.Login = query.GetString(9);
+                    user.Haslo = query.GetString(10);
+                    user.Email = query.GetString(11);
+                    user.Numer_telefonu = query.GetString(12);
+                    user.Admin = query.GetBoolean(13);
 
                     return user;
                 }
                 else
                 {
-                    return null;
+                    return new User();
                 }
             }
         }
@@ -73,11 +75,13 @@ namespace system_ogloszeniowy_wpf.Database.Methods
                     user.Opis = query.GetString(4);
                     user.Stanowisko = query.GetString(5);
                     user.Wyksztalcenie = query.GetString(6);
-                    user.Login = query.GetString(7);
-                    user.Haslo = query.GetString(8);
-                    user.Email = query.GetString(9);
-                    user.Numer_telefonu = query.GetString(10);
-                    user.Admin = query.GetBoolean(11);
+                    user.Github = query.GetString(7);
+                    user.Status = query.GetString(8);
+                    user.Login = query.GetString(9);
+                    user.Haslo = query.GetString(10);
+                    user.Email = query.GetString(11);
+                    user.Numer_telefonu = query.GetString(12);
+                    user.Admin = query.GetBoolean(13);
 
                     users.Add(user);
                 }
@@ -94,13 +98,14 @@ namespace system_ogloszeniowy_wpf.Database.Methods
             {
                 db.Open();
 
-                var updateCommand = new SqliteCommand("UPDATE uzytkownicy SET zdjecie = @Zdjecie, imie = @Imie, nazwisko = @Nazwisko, opis = @Opis, stanowisko = @Stanowisko, wyksztalcenie = @Wyksztalcenie, login = @Login, haslo = @Haslo, email = @Email, numer_telefonu = @Numer_tel, czy_admin = @Admin WHERE user_id = @UserId", db);
+                var updateCommand = new SqliteCommand("UPDATE uzytkownicy SET zdjecie = @Zdjecie, imie = @Imie, nazwisko = @Nazwisko, opis = @Opis, stanowisko = @Stanowisko, wyksztalcenie = @Wyksztalcenie, github = @Github, login = @Login, haslo = @Haslo, email = @Email, numer_telefonu = @Numer_tel, czy_admin = @Admin WHERE user_id = @UserId", db);
                 updateCommand.Parameters.AddWithValue("@Zdjecie", user.Zdjecie);
                 updateCommand.Parameters.AddWithValue("@Imie", user.Imie);
                 updateCommand.Parameters.AddWithValue("@Nazwisko", user.Nazwisko);
                 updateCommand.Parameters.AddWithValue("@Opis", user.Opis);
                 updateCommand.Parameters.AddWithValue("@Stanowisko", user.Stanowisko);
                 updateCommand.Parameters.AddWithValue("@Wyksztalcenie", user.Wyksztalcenie);
+                updateCommand.Parameters.AddWithValue("@Github", user.Github);
                 updateCommand.Parameters.AddWithValue("@Login", user.Login);
                 updateCommand.Parameters.AddWithValue("@Haslo", user.Haslo);
                 updateCommand.Parameters.AddWithValue("@Email", user.Email);
@@ -120,13 +125,15 @@ namespace system_ogloszeniowy_wpf.Database.Methods
             {
                 db.Open();
 
-                var insertCommand = new SqliteCommand("INSERT INTO uzytkownicy (user_id, zdjecie, imie, nazwisko, opis, stanowisko, wyksztalcenie, login, haslo, email, numer_telefonu, czy_admin) VALUES (NULL, @Zdjecie, @Imie, @Nazwisko, @Opis, @Stanowisko, @Wyksztalcenie, @Login, @Haslo, @Email, @Numer_tel, @Admin)", db);
+                var insertCommand = new SqliteCommand("INSERT INTO uzytkownicy (user_id, zdjecie, imie, nazwisko, opis, stanowisko, wyksztalcenie, github, status, login, haslo, email, numer_telefonu, czy_admin) VALUES (NULL, @Zdjecie, @Imie, @Nazwisko, @Opis, @Stanowisko, @Wyksztalcenie, @Github, @Status, @Login, @Haslo, @Email, @Numer_tel, @Admin)", db);
                 insertCommand.Parameters.AddWithValue("@Zdjecie", user.Zdjecie);
                 insertCommand.Parameters.AddWithValue("@Imie", user.Imie);
                 insertCommand.Parameters.AddWithValue("@Nazwisko", user.Nazwisko);
                 insertCommand.Parameters.AddWithValue("@Opis", user.Opis);
                 insertCommand.Parameters.AddWithValue("@Stanowisko", user.Stanowisko);
                 insertCommand.Parameters.AddWithValue("@Wyksztalcenie", user.Wyksztalcenie);
+                insertCommand.Parameters.AddWithValue("@Github", "");
+                insertCommand.Parameters.AddWithValue("@Status", "bezrobotny");
                 insertCommand.Parameters.AddWithValue("@Login", user.Login);
                 insertCommand.Parameters.AddWithValue("@Haslo", user.Haslo);
                 insertCommand.Parameters.AddWithValue("@Email", user.Email);

@@ -24,31 +24,45 @@
             <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
                 <StackPanel>
                     <Image Source="../Assets/user_prof.png" Width="180" Height="180"/>
-                    <TextBox x:Name="PositionBox" Margin="0, 10, 0, 0" Width="160" Height="20" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+                    <TextBox BorderBrush="Gray" x:Name="PositionBox" Margin="0, 10, 0, 0" Width="160" Height="20" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
                 </StackPanel>
 
                 <StackPanel Margin="20, 0, 0, 0">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
                         <StackPanel>
                             <Label Content="Imie"/>
-                            <TextBox x:Name="FirstNameBox" Width="150" Height="20" FontSize="12"/>
+                            <TextBox BorderBrush="Gray" x:Name="FirstNameBox" Width="150" Height="20" FontSize="12"/>
                         </StackPanel>
 
                         <StackPanel Margin="5, 0, 0, 0">
                             <Label Content="Nazwisko"/>
-                            <TextBox x:Name="LastNameBox" Width="150" Height="20" FontSize="12"/>
+                            <TextBox BorderBrush="Gray" x:Name="LastNameBox" Width="150" Height="20" FontSize="12"/>
                         </StackPanel>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
                         <StackPanel>
                             <Label Content="Numer telefonu"/>
-                            <TextBox x:Name="NumberBox" Width="150" Height="20" FontSize="12"/>
+                            <TextBox BorderBrush="Gray" x:Name="NumberBox" Width="150" Height="20" FontSize="12"/>
                         </StackPanel>
 
                         <StackPanel Margin="5, 0, 0, 0">
                             <Label Content="Email"/>
-                            <TextBox x:Name="EmailBox" Width="150" Height="20" FontSize="12"/>
+                            <TextBox BorderBrush="Gray" x:Name="EmailBox" Width="150" Height="20" FontSize="12"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel>
+                            <Label Content="Github: "/>
+                            <TextBox BorderBrush="Gray" x:Name="GithubBox" Width="150" Height="20" FontSize="12"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="5, 0, 0, 0">
+                            <Label Content="Status: "/>
+                            <Border BorderBrush="Gray" BorderThickness="1">
+                                <TextBlock x:Name="StatusBlock" Width="150" Height="19" FontSize="12"/>
+                            </Border>
                         </StackPanel>
                     </StackPanel>
 
@@ -69,7 +83,7 @@
             <StackPanel Grid.Row="1">
                 <StackPanel>
                     <Label Content="Opis"/>
-                    <TextBox TextWrapping="Wrap" x:Name="DescriptionBox" Height="100" VerticalContentAlignment="Top"/>
+                    <TextBox BorderBrush="Gray" TextWrapping="Wrap" x:Name="DescriptionBox" Height="100" VerticalContentAlignment="Top"/>
                 </StackPanel>
             </StackPanel>
 

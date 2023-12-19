@@ -11,6 +11,7 @@
     <None Remove="Assets\add.png" />
     <None Remove="Assets\briefcase.png" />
     <None Remove="Assets\edit.png" />
+    <None Remove="Assets\left_arrow.png" />
     <None Remove="Assets\user.png" />
     <None Remove="Assets\user_prof.png" />
   </ItemGroup>
@@ -23,6 +24,7 @@
     <Resource Include="Assets\add.png" />
     <Resource Include="Assets\briefcase.png" />
     <Resource Include="Assets\edit.png" />
+    <Resource Include="Assets\left_arrow.png" />
     <Resource Include="Assets\user.png" />
     <Resource Include="Assets\user_prof.png" />
   </ItemGroup>
