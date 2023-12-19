@@ -62,5 +62,15 @@ namespace system_ogloszeniowy_wpf.Pages
             MainWindow mainWindow = (system_ogloszeniowy_wpf.MainWindow)App.Current.MainWindow;
             mainWindow.Main.Navigate(new Home());
         }
+
+        private void GoToHomePageClicked(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+
+            if (mainWindow.Main.CanGoBack)
+            {
+                mainWindow.Main.GoBack();
+            }
+        }
     }
 }

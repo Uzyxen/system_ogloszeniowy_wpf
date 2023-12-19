@@ -9,6 +9,11 @@
       Title="ManageUsers" Background="White">
 
     <StackPanel>
+        <Button Click="GoToHomePageClicked" HorizontalAlignment="Left" Width="30" Background="Transparent">
+            <Button.Content>
+                <Image Source="../../Assets/left_arrow.png"/>
+            </Button.Content>
+        </Button>
         <Label Content="Aplikacje o prace" HorizontalAlignment="Center" FontSize="40" FontWeight="Bold"/>
 
         <StackPanel Orientation="Horizontal">

@@ -8,35 +8,44 @@
       d:DesignHeight="675" d:DesignWidth="1200"
       Title="Login" Background="White">
 
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="500"/>
-        </Grid.ColumnDefinitions>
-        
-        <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="90"/>
-            <RowDefinition Height="90"/>
-            <RowDefinition Height="90"/>
-        </Grid.RowDefinitions>
+    <StackPanel>
+        <Button Click="GoToHomePageClicked" HorizontalAlignment="Left" Width="30" Background="Transparent">
+            <Button.Content>
+                <Image Source="../Assets/left_arrow.png"/>
+            </Button.Content>
+        </Button>
 
-        <TextBlock Text="MOLTARO" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#6244DB"/>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500"/>
+            </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="1">
-            <TextBlock Text="Login" FontSize="18"/>
-            <TextBox x:Name="LoginTxt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
-        </StackPanel>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="90"/>
+            </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="2">
-            <TextBlock Text="Hasło" FontSize="18"/>
-            <PasswordBox x:Name="PasswordTxt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Nie masz konta?"/>
-                <Button Content="Zarejestruj się" Background="Transparent" Foreground="#09B8D7" BorderThickness="0" Click="GoToRegisterPage"/>
+            <TextBlock Text="MOLTARO" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#6244DB"/>
+
+            <StackPanel Grid.Row="1">
+                <TextBlock Text="Login" FontSize="18"/>
+                <TextBox x:Name="LoginTxt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
             </StackPanel>
-        </StackPanel>
 
-        <Button Click="LoginUserButtonClick" Grid.Row="3" Content="Zaloguj się" FontSize="18" Height="40" Background="#6244DB" BorderThickness="0" Foreground="White"/>
+            <StackPanel Grid.Row="2">
+                <TextBlock Text="Hasło" FontSize="18"/>
+                <PasswordBox x:Name="PasswordTxt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Nie masz konta?"/>
+                    <Button Content="Zarejestruj się" Background="Transparent" Foreground="#09B8D7" BorderThickness="0" Click="GoToRegisterPage"/>
+                </StackPanel>
+            </StackPanel>
 
-    </Grid>
+            <Button Click="LoginUserButtonClick" Grid.Row="3" Content="Zaloguj się" FontSize="18" Height="40" Background="#6244DB" BorderThickness="0" Foreground="White"/>
+
+        </Grid>
+    </StackPanel>
+
 </Page>

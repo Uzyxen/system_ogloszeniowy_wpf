@@ -33,5 +33,15 @@ namespace system_ogloszeniowy_wpf.Pages.AdminPages
             NumberBlock.Text = user.Numer_telefonu;
             EducationBlock.Text = user.Wyksztalcenie;
         }
+
+        private void GoToHomePageClicked(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+
+            if (mainWindow.Main.CanGoBack)
+            {
+                mainWindow.Main.GoBack();
+            }
+        }
     }
 }

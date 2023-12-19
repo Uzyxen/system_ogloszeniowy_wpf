@@ -57,5 +57,15 @@ namespace system_ogloszeniowy_wpf.Pages.AdminPages
             var mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow.Main.Navigate(new Offers());
         }
+
+        private void GoToHomePageClicked(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+
+            if (mainWindow.Main.CanGoBack)
+            {
+                mainWindow.Main.GoBack();
+            }
+        }
     }
 }

@@ -8,49 +8,58 @@
       d:DesignHeight="675" d:DesignWidth="1200"
       Title="Register" Background="White">
 
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="500"/>
-        </Grid.ColumnDefinitions>
+    <StackPanel>
+        <Button Click="GoToHomePageClicked" HorizontalAlignment="Left" Width="30" Background="Transparent">
+            <Button.Content>
+                <Image Source="../Assets/left_arrow.png"/>
+            </Button.Content>
+        </Button>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="90"/>
-            <RowDefinition Height="90"/>
-            <RowDefinition Height="90"/>
-            <RowDefinition Height="90"/>
-            <RowDefinition Height="90"/>
-        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500"/>
+            </Grid.ColumnDefinitions>
 
-        <TextBlock Text="MOLTARO" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#6244DB"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="90"/>
+            </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="1">
-            <TextBlock Text="Login" FontSize="18"/>
-            <TextBox x:Name="loginTxt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
-        </StackPanel>
+            <TextBlock Text="MOLTARO" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#6244DB"/>
 
-        <StackPanel Grid.Row="2">
-            <TextBlock Text="Email" FontSize="18"/>
-            <TextBox x:Name="emailTxt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
-        </StackPanel>
-
-        <StackPanel Grid.Row="3">
-            <TextBlock Text="Hasło" FontSize="18"/>
-            <PasswordBox x:Name="passwordTxt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
-        </StackPanel>
-
-        <StackPanel Grid.Row="4">
-            <TextBlock Text="Potwórz Hasło" FontSize="18"/>
-            <PasswordBox x:Name="password2Txt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
-            
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Masz już konto?"/>
-                <Button Content="Zaloguj się" Background="Transparent" Foreground="#09B8D7" BorderThickness="0" Click="GoToLoginPage"/>
+            <StackPanel Grid.Row="1">
+                <TextBlock Text="Login" FontSize="18"/>
+                <TextBox x:Name="loginTxt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
             </StackPanel>
-        </StackPanel>
 
-        <CheckBox x:Name="adminCheckBox" Content="Admin?" Grid.Row="5"/>
+            <StackPanel Grid.Row="2">
+                <TextBlock Text="Email" FontSize="18"/>
+                <TextBox x:Name="emailTxt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
+            </StackPanel>
 
-        <Button Click="RegisterButtonClicked" Grid.Row="6" Content="Zarejestruj się" FontSize="18" Height="40" Background="#6244DB" BorderThickness="0" Foreground="White"/>
-    </Grid>
+            <StackPanel Grid.Row="3">
+                <TextBlock Text="Hasło" FontSize="18"/>
+                <PasswordBox x:Name="passwordTxt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="4">
+                <TextBlock Text="Potwórz Hasło" FontSize="18"/>
+                <PasswordBox x:Name="password2Txt" Height="40" VerticalContentAlignment="Center" Margin="0, 5, 0, 0"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Masz już konto?"/>
+                    <Button Content="Zaloguj się" Background="Transparent" Foreground="#09B8D7" BorderThickness="0" Click="GoToLoginPage"/>
+                </StackPanel>
+            </StackPanel>
+
+            <CheckBox x:Name="adminCheckBox" Content="Admin?" Grid.Row="5"/>
+
+            <Button Click="RegisterButtonClicked" Grid.Row="6" Content="Zarejestruj się" FontSize="18" Height="40" Background="#6244DB" BorderThickness="0" Foreground="White"/>
+        </Grid>
+    </StackPanel>
+
 </Page>

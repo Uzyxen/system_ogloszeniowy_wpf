@@ -40,5 +40,15 @@ namespace system_ogloszeniowy_wpf.Pages
                 mainWindow.Main.Navigate(new OfferInfo(selectedItem));
             }
         }
+
+        private void GoToHomePageClicked(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+
+            if (mainWindow.Main.CanGoBack)
+            {
+                mainWindow.Main.GoBack();
+            }
+        }
     }
 }

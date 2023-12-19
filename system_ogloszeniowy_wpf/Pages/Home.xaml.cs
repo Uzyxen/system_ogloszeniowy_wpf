@@ -24,7 +24,9 @@ namespace system_ogloszeniowy_wpf.Pages
         {
             InitializeComponent();
 
-            if(App.loggedUser != null)
+            offersQuantity.Content = Database.Methods.DatabaseOffer.GetOfferQuantity();
+
+            if (App.loggedUser != null)
             {
                 loginButton.Visibility = Visibility.Hidden;
                 myAccountButton.Visibility = Visibility.Visible;

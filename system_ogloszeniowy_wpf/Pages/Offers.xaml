@@ -9,6 +9,11 @@
       Title="Offers" Background="White">
 
     <StackPanel>
+        <Button Click="GoToHomePageClicked" HorizontalAlignment="Left" Width="30" Background="Transparent">
+            <Button.Content>
+                <Image Source="../Assets/left_arrow.png"/>
+            </Button.Content>
+        </Button>
         <Label Content="Oferty" FontSize="40" FontWeight="Bold" HorizontalContentAlignment="Center"/>
 
         <StackPanel x:Name="AdminManage" Visibility="Hidden" Orientation="Horizontal" HorizontalAlignment="Center">

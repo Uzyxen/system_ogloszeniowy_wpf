@@ -9,6 +9,12 @@
       Title="AdminPanel" Background="White">
 
     <StackPanel>
+        <Button Click="GoToHomePageClicked" HorizontalAlignment="Left" Width="30" Background="Transparent">
+            <Button.Content>
+                <Image Source="../../Assets/left_arrow.png"/>
+            </Button.Content>
+        </Button>
+
         <Label Content="Panel admina" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center"/>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">

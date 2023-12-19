@@ -76,5 +76,15 @@ namespace system_ogloszeniowy_wpf.Pages
                 }
             }
         }
+
+        private void GoToHomePageClicked(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+
+            if (mainWindow.Main.CanGoBack)
+            {
+                mainWindow.Main.GoBack();
+            }
+        }
     }
 }

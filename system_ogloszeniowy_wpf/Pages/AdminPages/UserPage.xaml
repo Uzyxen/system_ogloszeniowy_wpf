@@ -8,55 +8,64 @@
       d:DesignHeight="675" d:DesignWidth="1200"
       Title="UserPage" Background="White">
 
-    <Grid Margin="30">
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
+    <StackPanel>
+        <Button Click="GoToHomePageClicked" HorizontalAlignment="Left" Width="30" Background="Transparent">
+            <Button.Content>
+                <Image Source="../../Assets/left_arrow.png"/>
+            </Button.Content>
+        </Button>
 
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
-            <StackPanel>
-                <Image Source="../../Assets/user_prof.png" Width="180" Height="180"/>
-                <TextBlock x:Name="PositionBlock" Margin="0, 10, 0, 0" Height="20" HorizontalAlignment="Center" FontWeight="Bold"/>
-            </StackPanel>
+        <Grid Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
-            <StackPanel Margin="20, 0, 0, 0">
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-                    <StackPanel>
-                        <Label Content="Imie"/>
-                        <TextBlock x:Name="FirstNameBlock" Width="150" Height="20" FontSize="12" Margin="5, 0, 0, 0" FontWeight="Bold"/>
-                    </StackPanel>
-
-                    <StackPanel Margin="5, 0, 0, 0">
-                        <Label Content="Nazwisko"/>
-                        <TextBlock x:Name="LastNameBlock" Width="150" Height="20" FontSize="12" Margin="5, 0, 0, 0" FontWeight="Bold"/>
-                    </StackPanel>
-                </StackPanel>
-
-                <StackPanel Orientation="Horizontal">
-                    <StackPanel>
-                        <Label Content="Numer telefonu"/>
-                        <TextBlock x:Name="NumberBlock" Width="150" Height="20" FontSize="12" Margin="5, 0, 0, 0" FontWeight="Bold"/>
-                    </StackPanel>
-
-                    <StackPanel Margin="5, 0, 0, 0">
-                        <Label Content="Email"/>
-                        <TextBlock x:Name="EmailBlock" Width="150" Height="20" FontSize="12" Margin="5, 0, 0, 0" FontWeight="Bold"/>
-                    </StackPanel>
-                </StackPanel>
-
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
                 <StackPanel>
-                    <Label Content="Wykształcenie"/>
-                    <TextBlock x:Name="EducationBlock" Margin="5, 0, 0, 0" FontWeight="Bold"/>
+                    <Image Source="../../Assets/user_prof.png" Width="180" Height="180"/>
+                    <TextBlock x:Name="PositionBlock" Margin="0, 10, 0, 0" Height="20" HorizontalAlignment="Center" FontWeight="Bold"/>
+                </StackPanel>
+
+                <StackPanel Margin="20, 0, 0, 0">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                        <StackPanel>
+                            <Label Content="Imie"/>
+                            <TextBlock x:Name="FirstNameBlock" Width="150" Height="20" FontSize="12" Margin="5, 0, 0, 0" FontWeight="Bold"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="5, 0, 0, 0">
+                            <Label Content="Nazwisko"/>
+                            <TextBlock x:Name="LastNameBlock" Width="150" Height="20" FontSize="12" Margin="5, 0, 0, 0" FontWeight="Bold"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel>
+                            <Label Content="Numer telefonu"/>
+                            <TextBlock x:Name="NumberBlock" Width="150" Height="20" FontSize="12" Margin="5, 0, 0, 0" FontWeight="Bold"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="5, 0, 0, 0">
+                            <Label Content="Email"/>
+                            <TextBlock x:Name="EmailBlock" Width="150" Height="20" FontSize="12" Margin="5, 0, 0, 0" FontWeight="Bold"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Label Content="Wykształcenie"/>
+                        <TextBlock x:Name="EducationBlock" Margin="5, 0, 0, 0" FontWeight="Bold"/>
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
-        </StackPanel>
 
-        <StackPanel Grid.Row="1">
-            <StackPanel>
-                <Label Content="Opis"/>
-                <TextBlock TextWrapping="Wrap" x:Name="DescriptionBlock" Height="100" Margin="5, 0, 0, 0"/>
+            <StackPanel Grid.Row="1">
+                <StackPanel>
+                    <Label Content="Opis"/>
+                    <TextBlock TextWrapping="Wrap" x:Name="DescriptionBlock" Height="100" Margin="5, 0, 0, 0"/>
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
-    </Grid>
+        </Grid>
+    </StackPanel>
+
 </Page>

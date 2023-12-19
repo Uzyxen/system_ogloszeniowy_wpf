@@ -33,6 +33,16 @@ namespace system_ogloszeniowy_wpf.Pages
             mainWindow.Main.Navigate(new Login());
         }
 
+        private void GoToHomePageClicked(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+
+            if (mainWindow.Main.CanGoBack)
+            {
+                mainWindow.Main.GoBack();
+            }
+        }
+
         private void RegisterButtonClicked(object sender, RoutedEventArgs e)
         {
             bool success = true;

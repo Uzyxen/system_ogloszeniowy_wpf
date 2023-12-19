@@ -97,6 +97,28 @@ namespace system_ogloszeniowy_wpf.Database.Methods
             return offers;
         }
 
+        public static int GetOfferQuantity()
+        {
+            string dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "serwis_ogloszeniowy.db");
+
+            using (var db = new SqliteConnection($"Filename={dbpath}"))
+            {
+                db.Open();
+
+                var selectCommand = new SqliteCommand("SELECT COUNT(*) FROM oferty", db);
+                var query = selectCommand.ExecuteReader();
+
+                if (query.Read())
+                {
+                    return query.GetInt32(0);
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
+
         public static Offer ReadOffer(int id)
         {
             string dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "serwis_ogloszeniowy.db");
