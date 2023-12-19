@@ -54,7 +54,7 @@ namespace system_ogloszeniowy_wpf.Pages
                     mainWindow.Main.Navigate(new Home());
                 }
 
-                if(App.loggedUser.Status == "bezrobotny")
+                if(App.loggedUser.Status != "bezrobotny")
                 {
                     MessageBox.Show("Nie możesz aplikować o prace, ponieważ już ją posiadasz!", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
